@@ -31,8 +31,6 @@ Built with pure **HTML5, Modern CSS3, and Vanilla JavaScript (ES6+)** with zero 
 - **📲 1-Click Phone Calendar Sync (`.ics`)**:
   - Export standard RFC 5545 `.ics` file (`batch2023.ics`).
   - Import all 59 classes with topics, faculty names, and 15-minute reminders into **Google Calendar, Apple Calendar, or Microsoft Outlook**.
-- **🖨️ Publication-Grade Print & PDF View**:
-  - Formal institutional letterhead with official crest, Ref. No., weekly matrix, and 3-column signatory stamps.
 
 ---
 

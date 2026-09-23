@@ -59,16 +59,6 @@
           <span>Sync Phone (.ICS)</span>
         </button>
 
-        <!-- Print Schedule Document -->
-        <button class="header-btn" id="open-print-btn" title="Printable Timetable & Directive">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <polyline points="6 9 6 2 18 2 18 9"></polyline>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-            <rect x="6" y="14" width="12" height="8"></rect>
-          </svg>
-          <span>Print / PDF</span>
-        </button>
-
         <!-- GitHub Deployment Helper -->
         <button class="header-btn github-btn" id="open-github-btn" title="How to publish on GitHub Pages">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -274,7 +264,6 @@
       </div>
       <div class="footer-right">
         <button class="footer-action-link" id="footer-sync-btn">📲 Sync Phone Calendar (.ICS)</button>
-        <button class="footer-action-link" id="footer-print-btn">🖨️ Print Timetable</button>
         <button class="footer-action-link" id="footer-github-btn">🐙 GitHub Pages Setup</button>
       </div>
     </div>
@@ -437,158 +426,6 @@ git push -u origin main</code>
           <button class="btn-today" id="github-close-btn">Done</button>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- ==================== MODAL 4: PRINT / PDF PREVIEW MODAL ==================== -->
-  <div class="modal-backdrop hidden" id="print-modal">
-    <div class="modal-card print-modal-card" role="dialog" aria-modal="true" aria-labelledby="print-title">
-      
-      <!-- Modal Print Controls (hidden on actual printout) -->
-      <div class="print-toolbar-bar">
-        <button class="btn-print-action" id="trigger-print-btn">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <polyline points="6 9 6 2 18 2 18 9"></polyline>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-            <rect x="6" y="14" width="12" height="8"></rect>
-          </svg>
-          <span>Print Document / Save as PDF</span>
-        </button>
-
-        <button class="btn-today" id="print-modal-close">Close Preview</button>
-      </div>
-
-      <!-- Printable Area -->
-      <div class="print-sheet-container" id="printable-content">
-        
-        <!-- Institutional Letterhead -->
-        <div class="print-letterhead">
-          <div class="print-crest-wrap">
-            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-              <path d="M2 17l10 5 10-5"></path>
-              <path d="M2 12l10 5 10-5"></path>
-            </svg>
-          </div>
-          <div class="print-title-group">
-            <div class="print-hindi">अखिल भारतीय आयुर्विज्ञान संस्थान, भुवनेश्वर</div>
-            <h1 class="print-eng" id="print-title">ALL INDIA INSTITUTE OF MEDICAL SCIENCES, BHUBANESWAR</h1>
-            <div class="print-sub">ACADEMIC SECTION • MBBS BATCH 2023 (7TH SEMESTER)</div>
-            <div class="print-ref">REF: AIIMS/BBSR/ACAD/BATCH2023/7TH-SEM/SEP-2026</div>
-          </div>
-        </div>
-
-        <div class="print-rule"></div>
-
-        <!-- Weekly Timetable Matrix -->
-        <h2 class="print-section-heading">Weekly Timetable Schedule (LT-3 & Department Labs)</h2>
-        <div class="print-table-wrapper">
-          <table class="print-matrix-table">
-            <thead>
-              <tr>
-                <th style="width: 14%;">Day</th>
-                <th style="width: 24%;">08:00 AM – 09:00 AM</th>
-                <th style="width: 32%;">02:00 PM – 05:00 PM (Afternoon)</th>
-                <th style="width: 30%;">Key Faculty / Venue</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Monday</strong></td>
-                <td><span class="p-dept opht">Ophthalmology</span> Theory</td>
-                <td><span class="p-dept cmfm">CMFM Practical</span> (Group A, 2-5 PM)</td>
-                <td>Dr B Nayak / Dr S K Sahu • LT-3 & CMFM Labs</td>
-              </tr>
-              <tr>
-                <td><strong>Tuesday</strong></td>
-                <td><span class="p-dept med">Medicine</span> / <span class="p-dept paed">Paediatrics</span></td>
-                <td><span class="p-dept cmfm">CMFM Practical</span> (Group B, 2-5 PM)</td>
-                <td>Dr Anupama / Dr Rashmi / Dr Dwibedi • LT-3</td>
-              </tr>
-              <tr>
-                <td><strong>Wednesday</strong></td>
-                <td><span class="p-dept surg">Surgery</span> Theory (8-9 AM)</td>
-                <td>Clinical Postings / Self Study</td>
-                <td>Dr S K Sahu / Dr M Gureh / Dr S Patro • LT-3</td>
-              </tr>
-              <tr>
-                <td><strong>Thursday</strong></td>
-                <td><span class="p-dept cmfm">CMFM</span> Theory (8-9 AM)</td>
-                <td>
-                  <div>2-3 PM: <span class="p-dept cmfm">CMFM</span> Theory</div>
-                  <div>3-4 PM: <span class="p-dept ent">ENT</span> Theory</div>
-                  <div>4-5 PM: <span class="p-dept opht">Ophthalmology</span> Theory</div>
-                </td>
-                <td>Dr S H Subba / Dr D K Samal / Dr S Parija • LT-3</td>
-              </tr>
-              <tr>
-                <td><strong>Friday</strong></td>
-                <td><span class="p-dept opht">Ophthalmology</span> (8-9 AM)</td>
-                <td>
-                  <div>2-3 PM: <span class="p-dept cmfm">CMFM</span> / <span class="p-dept opht">Opht</span></div>
-                  <div>3-4 PM: <span class="p-dept cmfm">CMFM</span> Theory</div>
-                  <div>4-5 PM: <span class="p-dept obg">OBG</span> Theory (LT-3)</div>
-                </td>
-                <td>Dr B Panda / Dr S Mitra / Dr A K Singh • LT-3</td>
-              </tr>
-              <tr>
-                <td><strong>Saturday</strong></td>
-                <td><span class="p-dept med">Medicine</span> Theory (8-9 AM)</td>
-                <td>Clinical Ward Postings</td>
-                <td>Dr Anupam / Dr Rashmi • LT-3</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Chronological Master Table -->
-        <h2 class="print-section-heading" style="margin-top: 1.5rem;">Chronological Class Roster (September 2026 - 59 Sessions)</h2>
-        <div class="print-table-wrapper">
-          <table class="print-master-table">
-            <thead>
-              <tr>
-                <th style="width: 14%;">Date & Day</th>
-                <th style="width: 18%;">Department</th>
-                <th style="width: 10%;">Type</th>
-                <th style="width: 32%;">Topic</th>
-                <th style="width: 14%;">Timings</th>
-                <th style="width: 12%;">Faculty</th>
-              </tr>
-            </thead>
-            <tbody id="print-master-tbody">
-              <!-- Filled by app.js -->
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Academic Milestones & Signatory -->
-        <div class="print-milestones-box">
-          <strong>Key Academic Dates:</strong> 7th Sem Begins: 28 July 2026 • Pre-Prof Exams: 13–23 Nov 2026 • Prep Leave: 24–30 Nov 2026 • 3rd Professional Exam (Part I): 01–31 Dec 2026 • 8th Sem: 01 Jan 2027.
-        </div>
-
-        <div class="print-signatory-row">
-          <div class="sign-col">
-            <div class="sign-space"></div>
-            <div class="sign-bar"></div>
-            <div class="sign-title">Academic Coordinator</div>
-            <div class="sign-sub">Batch 2023 (7th Sem)</div>
-          </div>
-          <div class="sign-col">
-            <div class="sign-space"></div>
-            <div class="sign-bar"></div>
-            <div class="sign-title">HOD / Dept Representative</div>
-            <div class="sign-sub">AIIMS Bhubaneswar</div>
-          </div>
-          <div class="sign-col">
-            <div class="sign-space"></div>
-            <div class="sign-bar"></div>
-            <div class="sign-title">Dean (Academic)</div>
-            <div class="sign-sub">AIIMS Bhubaneswar</div>
-          </div>
-        </div>
-
-      </div>
-
     </div>
   </div>
 

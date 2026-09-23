@@ -716,44 +716,6 @@ function closeGitHubModal() {
   document.body.style.overflow = '';
 }
 
-function openPrintModal() {
-  const masterTbody = document.getElementById('print-master-tbody');
-  if (masterTbody) {
-    masterTbody.innerHTML = '';
-    const sorted = [...allEvents].sort((a, b) => {
-      const da = a.date || '';
-      const db = b.date || '';
-      if (da !== db) return da.localeCompare(db);
-      return toMinutes(a.start_time) - toMinutes(b.start_time);
-    });
-
-    sorted.forEach(evt => {
-      const tr = document.createElement('tr');
-      const theme = getDeptTheme(evt.department);
-      tr.innerHTML = `
-        <td><strong>${formatNiceDate(evt.date)}</strong></td>
-        <td><span class="p-dept" style="background:${theme.bg}; color:${theme.text};">${escapeHtml(theme.short)}</span></td>
-        <td>${escapeHtml(evt.class_type)}${evt.group && evt.group !== 'all' ? ` (${escapeHtml(evt.group)})` : ''}</td>
-        <td><strong>${escapeHtml(evt.topic)}</strong></td>
-        <td>${formatTime(evt.start_time)} – ${formatTime(evt.end_time)}</td>
-        <td>${escapeHtml(evt.faculty)}</td>
-      `;
-      masterTbody.appendChild(tr);
-    });
-  }
-
-  document.getElementById('print-modal').classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
-}
-
-function closePrintModal() {
-  document.getElementById('print-modal').classList.add('hidden');
-  document.body.style.overflow = '';
-}
-
-function triggerPrintDocument() {
-  window.print();
-}
 
 /* ---------- PHONE CALENDAR SYNC (.ICS EXPORT) ---------- */
 function pad(n) { return String(n).padStart(2, '0'); }
@@ -966,14 +928,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target.id === 'github-modal') closeGitHubModal();
   });
 
-  document.getElementById('open-print-btn')?.addEventListener('click', openPrintModal);
-  document.getElementById('footer-print-btn')?.addEventListener('click', openPrintModal);
-  document.getElementById('print-modal-close')?.addEventListener('click', closePrintModal);
-  document.getElementById('trigger-print-btn')?.addEventListener('click', triggerPrintDocument);
-  document.getElementById('print-modal')?.addEventListener('click', (e) => {
-    if (e.target.id === 'print-modal') closePrintModal();
-  });
-
   // Sync Phone Calendar (.ICS)
   document.getElementById('sync-phone-btn')?.addEventListener('click', downloadICS);
   document.getElementById('footer-sync-btn')?.addEventListener('click', downloadICS);
@@ -984,7 +938,6 @@ document.addEventListener('DOMContentLoaded', () => {
       closeDetailModal();
       closeCalendarModal();
       closeGitHubModal();
-      closePrintModal();
     } else if (e.altKey && e.key === 'ArrowLeft') {
       weekOffset--;
       renderAllViews();
