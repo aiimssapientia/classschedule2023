@@ -163,7 +163,7 @@ let weekOffset      = 0;                     // 0 = week of 31 Aug – 06 Sep 20
 let activeDept      = 'all';
 let activeType      = 'all';
 let activeCohort    = 'all';
-let activeView      = (window.innerWidth <= 768) ? 'agenda' : 'agenda'; // Default to responsive mobile agenda
+let activeView      = 'agenda'; // Default view (supports 'agenda', 'grid', 'both')
 let searchQuery     = '';
 let activeEvent     = null;
 let calViewDate     = new Date(2026, 8, 1);  // September 2026 (8 = Sep)
@@ -299,17 +299,34 @@ function renderAllViews() {
   renderAgendaView(visibleEvents, weekStart, today);
 
   // 5. Toggle View Containers
-  const gridContainer   = document.getElementById('grid-view-container');
-  const agendaContainer = document.getElementById('agenda-view-container');
-  const emptyState      = document.getElementById('empty-state');
+  const gridSectionWrap     = document.getElementById('grid-section-wrap');
+  const agendaSectionWrap   = document.getElementById('agenda-section-wrap');
+  const gridSectionHeader   = document.getElementById('grid-section-header');
+  const agendaSectionHeader = document.getElementById('agenda-section-header');
+  const emptyState          = document.getElementById('empty-state');
 
   if (activeView === 'grid') {
-    gridContainer.classList.remove('hidden');
-    agendaContainer.classList.add('hidden');
+    gridSectionWrap?.classList.remove('hidden');
+    agendaSectionWrap?.classList.add('hidden');
+    gridSectionHeader?.classList.add('hidden');
+    agendaSectionHeader?.classList.add('hidden');
+  } else if (activeView === 'both') {
+    gridSectionWrap?.classList.remove('hidden');
+    agendaSectionWrap?.classList.remove('hidden');
+    gridSectionHeader?.classList.remove('hidden');
+    agendaSectionHeader?.classList.remove('hidden');
   } else {
-    gridContainer.classList.add('hidden');
-    agendaContainer.classList.remove('hidden');
+    // Default 'agenda'
+    gridSectionWrap?.classList.add('hidden');
+    agendaSectionWrap?.classList.remove('hidden');
+    gridSectionHeader?.classList.add('hidden');
+    agendaSectionHeader?.classList.add('hidden');
   }
+
+  // Sync View Switcher Buttons
+  document.querySelectorAll('#view-mode-selector .segmented-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.view === activeView);
+  });
 
   // 6. Handle Empty State
   if (emptyState) {
@@ -321,7 +338,7 @@ function renderAllViews() {
   }
 }
 
-/** Render Desktop Timetable Grid (8:00 AM - 6:00 PM) */
+/** Render Timetable Grid (8:00 AM - 6:00 PM) */
 function renderGridView(visibleEvents, weekStart, today) {
   const grid = document.getElementById('timetable-grid');
   if (!grid) return;
@@ -342,11 +359,20 @@ function renderGridView(visibleEvents, weekStart, today) {
 
     const header = document.createElement('div');
     header.className = `grid-day-header${isToday ? ' is-today-col' : ''}`;
+    header.dataset.dayIndex = i;
+    header.dataset.date = toDateKey(dayDate);
     header.innerHTML = `
       <div class="grid-day-name">${DAY_SHORT[i]}</div>
       <div class="grid-day-date">${formatShortDate(dayDate)}</div>
     `;
     grid.appendChild(header);
+  });
+
+  // Sync mobile day jump strip active indicator
+  const todayIdx = weekDayDates.findIndex(d => d.toDateString() === today.toDateString());
+  const initialActiveIdx = (todayIdx !== -1) ? todayIdx : 0;
+  document.querySelectorAll('#grid-day-jump-strip .day-jump-chip').forEach(b => {
+    b.classList.toggle('active', parseInt(b.dataset.dayIdx, 10) === initialActiveIdx);
   });
 
   // Hour Rows (8 to 17)
@@ -932,6 +958,50 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('sync-phone-btn')?.addEventListener('click', downloadICS);
   document.getElementById('footer-sync-btn')?.addEventListener('click', downloadICS);
 
+  // Mobile Grid Day Jump Buttons
+  document.querySelectorAll('#grid-day-jump-strip .day-jump-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.dayIdx, 10);
+      document.querySelectorAll('#grid-day-jump-strip .day-jump-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const gridContainer = document.getElementById('grid-view-container');
+      if (gridContainer) {
+        const header = gridContainer.querySelector(`.grid-day-header[data-day-index="${idx}"]`);
+        if (header) {
+          const timeColWidth = window.innerWidth <= 768 ? 50 : 60;
+          const scrollTarget = header.offsetLeft - timeColWidth;
+          gridContainer.scrollTo({ left: Math.max(0, scrollTarget), behavior: 'smooth' });
+        }
+      }
+    });
+  });
+
+  // Track horizontal scroll in grid to update active day jump chip
+  const gridOuter = document.getElementById('grid-view-container');
+  if (gridOuter) {
+    let scrollTimer;
+    gridOuter.addEventListener('scroll', () => {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        const timeColWidth = window.innerWidth <= 768 ? 50 : 60;
+        const currentLeft = gridOuter.scrollLeft + timeColWidth + 10;
+        const headers = Array.from(gridOuter.querySelectorAll('.grid-day-header'));
+        let activeIdx = 0;
+        let minDiff = Infinity;
+        headers.forEach((h) => {
+          const diff = Math.abs(h.offsetLeft - currentLeft);
+          if (diff < minDiff) {
+            minDiff = diff;
+            activeIdx = parseInt(h.dataset.dayIndex, 10);
+          }
+        });
+        document.querySelectorAll('#grid-day-jump-strip .day-jump-chip').forEach(b => {
+          b.classList.toggle('active', parseInt(b.dataset.dayIdx, 10) === activeIdx);
+        });
+      }, 60);
+    }, { passive: true });
+  }
+
   // Keyboard Shortcuts (Escape to dismiss, Arrow keys for weeks)
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
@@ -943,17 +1013,6 @@ document.addEventListener('DOMContentLoaded', () => {
       renderAllViews();
     } else if (e.altKey && e.key === 'ArrowRight') {
       weekOffset++;
-      renderAllViews();
-    }
-  });
-
-  // Responsive adapt on resize
-  window.addEventListener('resize', () => {
-    if (window.innerWidth <= 768 && activeView === 'grid') {
-      activeView = 'agenda';
-      document.querySelectorAll('#view-mode-selector .segmented-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.view === 'agenda');
-      });
       renderAllViews();
     }
   });

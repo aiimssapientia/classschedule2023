@@ -46,7 +46,8 @@
             <line x1="8" y1="2" x2="8" y2="6"></line>
             <line x1="3" y1="10" x2="21" y2="10"></line>
           </svg>
-          <span>Month Calendar</span>
+          <span class="btn-text-full">Month Calendar</span>
+          <span class="btn-text-compact">Calendar</span>
         </button>
 
         <!-- 1-Click Phone Calendar Sync (.ICS) -->
@@ -56,7 +57,8 @@
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          <span>Sync Phone (.ICS)</span>
+          <span class="btn-text-full">Sync Phone (.ICS)</span>
+          <span class="btn-text-compact">Sync (.ICS)</span>
         </button>
 
         <!-- GitHub Deployment Helper -->
@@ -64,7 +66,8 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
           </svg>
-          <span>GitHub Guide</span>
+          <span class="btn-text-full">GitHub Guide</span>
+          <span class="btn-text-compact">Guide</span>
         </button>
       </div>
 
@@ -151,9 +154,9 @@
             </div>
           </div>
 
-          <!-- View Switcher (Agenda vs Grid) -->
+          <!-- View Switcher (Agenda vs Grid vs Both) -->
           <div class="segmented-control view-mode-control" id="view-mode-selector">
-            <button class="segmented-btn active" data-view="agenda" id="view-agenda-btn">
+            <button class="segmented-btn active" data-view="agenda" id="view-agenda-btn" title="Daily Agenda Cards">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                 <line x1="8" y1="6" x2="21" y2="6"></line>
                 <line x1="8" y1="12" x2="21" y2="12"></line>
@@ -164,7 +167,7 @@
               </svg>
               <span>Agenda</span>
             </button>
-            <button class="segmented-btn" data-view="grid" id="view-grid-btn">
+            <button class="segmented-btn" data-view="grid" id="view-grid-btn" title="7-Day Timetable Grid (8:00 - 18:00)">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                 <line x1="3" y1="9" x2="21" y2="9"></line>
@@ -172,7 +175,14 @@
                 <line x1="9" y1="3" x2="9" y2="21"></line>
                 <line x1="15" y1="3" x2="15" y2="21"></line>
               </svg>
-              <span>Grid (8-18)</span>
+              <span>Grid</span>
+            </button>
+            <button class="segmented-btn" data-view="both" id="view-both-btn" title="View Grid & Agenda Together">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="3" y="3" width="18" height="7" rx="1.5"></rect>
+                <rect x="3" y="14" width="18" height="7" rx="1.5"></rect>
+              </svg>
+              <span>Both</span>
             </button>
           </div>
 
@@ -231,14 +241,45 @@
     <!-- ==================== MAIN SCHEDULE VIEWS ==================== -->
     <div class="schedule-container">
       
-      <!-- VIEW 1: Mobile Agenda Stream (Card-Based) -->
-      <div class="agenda-view-container" id="agenda-view-container">
-        <!-- Rendered dynamically by app.js -->
+      <!-- GRID VIEW BLOCK -->
+      <div class="view-section-wrap hidden" id="grid-section-wrap">
+        <div class="view-header-strip hidden" id="grid-section-header">
+          <span class="view-header-title">📊 7-Day Timetable Grid Matrix</span>
+          <span class="view-header-badge">8:00 AM – 6:00 PM</span>
+        </div>
+
+        <div class="grid-outer-card" id="grid-view-container">
+          <!-- Mobile Day Jump Bar -->
+          <div class="grid-mobile-toolbar" id="grid-mobile-toolbar">
+            <div class="grid-swipe-hint">
+              <span class="swipe-hand">👆</span>
+              <span>Swipe across 7 days or tap to jump:</span>
+            </div>
+            <div class="grid-day-jump-strip" id="grid-day-jump-strip">
+              <button type="button" class="day-jump-chip active" data-day-idx="0">Mon</button>
+              <button type="button" class="day-jump-chip" data-day-idx="1">Tue</button>
+              <button type="button" class="day-jump-chip" data-day-idx="2">Wed</button>
+              <button type="button" class="day-jump-chip" data-day-idx="3">Thu</button>
+              <button type="button" class="day-jump-chip" data-day-idx="4">Fri</button>
+              <button type="button" class="day-jump-chip" data-day-idx="5">Sat</button>
+              <button type="button" class="day-jump-chip" data-day-idx="6">Sun</button>
+            </div>
+          </div>
+
+          <div class="timetable-grid" id="timetable-grid">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
       </div>
 
-      <!-- VIEW 2: Desktop 7-Day Timetable Grid (8 AM - 6 PM) -->
-      <div class="grid-outer-card hidden" id="grid-view-container">
-        <div class="timetable-grid" id="timetable-grid">
+      <!-- AGENDA VIEW BLOCK -->
+      <div class="view-section-wrap" id="agenda-section-wrap">
+        <div class="view-header-strip hidden" id="agenda-section-header">
+          <span class="view-header-title">📋 Day-by-Day Agenda Stream</span>
+          <span class="view-header-badge">Chronological List</span>
+        </div>
+
+        <div class="agenda-view-container" id="agenda-view-container">
           <!-- Rendered dynamically by app.js -->
         </div>
       </div>

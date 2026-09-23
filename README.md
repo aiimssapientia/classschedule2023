@@ -8,9 +8,10 @@ Built with pure **HTML5, Modern CSS3, and Vanilla JavaScript (ES6+)** with zero 
 
 ## ✨ Features
 
-- **Dual View Engine**:
-  - **📱 Mobile Agenda View**: Touch-optimized vertical card feed with clean subject pills, faculty badges, and timing indicators.
-  - **🖥️ 7-Day Timetable Grid**: 8:00 AM to 6:00 PM timetable matrix showcasing how Ophthalmology, CMFM, ENT, OBG, Surgery, and Medicine seamlessly interlock.
+- **Triple View Engine (Fully Mobile Optimized)**:
+  - **📱 Agenda View**: Touch-optimized vertical card stream with sticky day headers, colored subject badges, faculty info, and timing pills.
+  - **🗓️ 7-Day Timetable Grid**: Full 8:00 AM to 6:00 PM timetable matrix with sticky time/day headers, touch-friendly day jump strip (Mon–Sun), and horizontal swipe.
+  - **⚡ Both View (Split/Combined)**: View both the 7-day grid and daily agenda stream simultaneously on mobile or desktop.
 - **59 Verified Classes & Clinical Postings**:
   - 👁️ **Ophthalmology** (14 Theory Classes)
   - 🩺 **Community Medicine & Family Medicine** (14 Theory + 9 Practicals for Groups A & B)
