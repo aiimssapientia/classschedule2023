@@ -1,0 +1,952 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AIIMS Bhubaneswar//MBBS Batch 2023 7th Sem Class Schedule//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:MBBS Batch 2023 (7th Sem) AIIMS Bhubaneswar
+X-WR-TIMEZONE:Asia/Kolkata
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-1-opht-01@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260903T160000
+DTEND:20260903T170000
+SUMMARY:[Ophthalmology] Amblyopia and BSV
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr S Parija\nTopic: Amblyopia and BSV\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Amblyopia and BSV in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-2-opht-02@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260904T080000
+DTEND:20260904T090000
+SUMMARY:[Ophthalmology] Thyroid Eye Disease
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr B Panda\nTopic: Thyroid Eye Disease\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Thyroid Eye Disease in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-3-opht-03@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260907T080000
+DTEND:20260907T090000
+SUMMARY:[Ophthalmology] Eye Banking
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr B Nayak\nTopic: Eye Banking\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Eye Banking in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-4-opht-04@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260910T160000
+DTEND:20260910T170000
+SUMMARY:[Ophthalmology] ROP (Retinopathy of Prematurity)
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr S K Sahu\nTopic: ROP (Retinopathy of Prematurity)\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] ROP (Retinopathy of Prematurity) in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-5-opht-05@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260911T080000
+DTEND:20260911T090000
+SUMMARY:[Ophthalmology] Orbitocellulities and CV thrombocix
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr B Panda\nTopic: Orbitocellulities and CV thrombocix\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Orbitocellulities and CV thrombocix in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-6-opht-06@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260911T140000
+DTEND:20260911T150000
+SUMMARY:[Ophthalmology] Surgical aspects of retinal disease
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr P Mishra\nTopic: Surgical aspects of retinal disease\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Surgical aspects of retinal disease in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-7-opht-07@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260914T080000
+DTEND:20260914T090000
+SUMMARY:[Ophthalmology] Anatomy of Visual pathway and its lesions
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr B Nayak\nTopic: Anatomy of Visual pathway and its lesions\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Anatomy of Visual pathway and its lesions in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-8-opht-08@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260917T160000
+DTEND:20260917T170000
+SUMMARY:[Ophthalmology] Vascular Disorders of Retina
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr B Maharana\nTopic: Vascular Disorders of Retina\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Vascular Disorders of Retina in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-9-opht-09@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260918T080000
+DTEND:20260918T090000
+SUMMARY:[Ophthalmology] Pupillary reflections and its anomalies
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr P Mishra\nTopic: Pupillary reflections and its anomalies\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Pupillary reflections and its anomalies in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-10-opht-10@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260921T080000
+DTEND:20260921T090000
+SUMMARY:[Ophthalmology] Mucormycosis
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr S K Sahu\nTopic: Mucormycosis\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Mucormycosis in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-11-opht-11@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260924T160000
+DTEND:20260924T170000
+SUMMARY:[Ophthalmology] Nystagmus
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr P Mishra\nTopic: Nystagmus\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Nystagmus in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-12-opht-12@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260925T080000
+DTEND:20260925T090000
+SUMMARY:[Ophthalmology] Disease of Vitreous
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr B Maharana\nTopic: Disease of Vitreous\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Disease of Vitreous in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-13-opht-13@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260925T140000
+DTEND:20260925T150000
+SUMMARY:[Ophthalmology] Eye in systemic disorders
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr B Nayak\nTopic: Eye in systemic disorders\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Eye in systemic disorders in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-14-opht-14@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260928T080000
+DTEND:20260928T090000
+SUMMARY:[Ophthalmology] Orbital Tumors
+DESCRIPTION:Subject: Ophthalmology\nFaculty: Dr B Panda\nTopic: Orbital Tumors\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Ophthalmology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Ophthalmology] Orbital Tumors in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-15-obg-01@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260904T160000
+DTEND:20260904T170000
+SUMMARY:[OBG] Induction and augmentation of labour
+DESCRIPTION:Subject: Obstetrics & Gynaecology\nFaculty: Dr S. Mitra\nTopic: Induction and augmentation of labour\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Obstetrics & Gynaecology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [OBG] Induction and augmentation of labour in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-16-obg-02@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260911T160000
+DTEND:20260911T170000
+SUMMARY:[OBG] Antepartum fetal assessment
+DESCRIPTION:Subject: Obstetrics & Gynaecology\nFaculty: Dr I. Mohapatra\nTopic: Antepartum fetal assessment\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Obstetrics & Gynaecology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [OBG] Antepartum fetal assessment in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-17-obg-03@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260918T160000
+DTEND:20260918T170000
+SUMMARY:[OBG] Intrapartum fetal assessment
+DESCRIPTION:Subject: Obstetrics & Gynaecology\nFaculty: Dr Deepthi\nTopic: Intrapartum fetal assessment\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Obstetrics & Gynaecology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [OBG] Intrapartum fetal assessment in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-18-obg-04@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260925T160000
+DTEND:20260925T170000
+SUMMARY:[OBG] Placenta Previa
+DESCRIPTION:Subject: Obstetrics & Gynaecology\nFaculty: Dr S. Singh\nTopic: Placenta Previa\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Obstetrics & Gynaecology,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [OBG] Placenta Previa in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-19-med-01@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260901T080000
+DTEND:20260901T090000
+SUMMARY:[Medicine] Bronchiectasis and Lung Abscess Part 1
+DESCRIPTION:Subject: General Medicine\nFaculty: Dr. Anupama\nTopic: Bronchiectasis and Lung Abscess Part 1\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:General Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Medicine] Bronchiectasis and Lung Abscess Part 1 in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-20-med-02@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260905T080000
+DTEND:20260905T090000
+SUMMARY:[Medicine] Pneumonia Part 1
+DESCRIPTION:Subject: General Medicine\nFaculty: Dr. Anupam\nTopic: Pneumonia Part 1\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:General Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Medicine] Pneumonia Part 1 in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-21-med-03@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260912T080000
+DTEND:20260912T090000
+SUMMARY:[Medicine] Pleural Diseases Part 1
+DESCRIPTION:Subject: General Medicine\nFaculty: Dr. Rashmi\nTopic: Pleural Diseases Part 1\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:General Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Medicine] Pleural Diseases Part 1 in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-22-med-04@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260915T080000
+DTEND:20260915T090000
+SUMMARY:[Medicine] Pleural Diseases Part 2
+DESCRIPTION:Subject: General Medicine\nFaculty: Dr. Rashmi\nTopic: Pleural Diseases Part 2\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:General Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Medicine] Pleural Diseases Part 2 in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-23-med-05@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260919T080000
+DTEND:20260919T090000
+SUMMARY:[Medicine] Pneumonia Part 2
+DESCRIPTION:Subject: General Medicine\nFaculty: Dr. Anupam\nTopic: Pneumonia Part 2\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:General Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Medicine] Pneumonia Part 2 in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-24-med-06@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260926T080000
+DTEND:20260926T090000
+SUMMARY:[Medicine] Bronchiectasis and Lung Abscess Part 2
+DESCRIPTION:Subject: General Medicine\nFaculty: Dr. Anupama\nTopic: Bronchiectasis and Lung Abscess Part 2\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:General Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Medicine] Bronchiectasis and Lung Abscess Part 2 in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-25-surg-01@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260902T080000
+DTEND:20260902T090000
+SUMMARY:[Surgery] System specific post-operative complications and management
+DESCRIPTION:Subject: General Surgery\nFaculty: Dr. Shantanu Kumar Sahu\nTopic: System specific post-operative complications and management\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:General Surgery,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Surgery] System specific post-operative complications and management in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-26-surg-02@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260909T080000
+DTEND:20260909T090000
+SUMMARY:[Surgery] Urinary symptoms
+DESCRIPTION:Subject: General Surgery\nFaculty: Dr Monica Gureh\nTopic: Urinary symptoms\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:General Surgery,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Surgery] Urinary symptoms in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-27-surg-03@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260916T080000
+DTEND:20260916T090000
+SUMMARY:[Surgery] Trauma & Emergency Medicine (T & EM)
+DESCRIPTION:Subject: General Surgery\nFaculty: T & EM Faculty\nTopic: Trauma & Emergency Medicine (T & EM)\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:General Surgery,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Surgery] Trauma & Emergency Medicine (T & EM) in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-28-surg-04@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260923T080000
+DTEND:20260923T090000
+SUMMARY:[Surgery] Thyroid IV (Mechanism and role of RAI in thyroid disorders)
+DESCRIPTION:Subject: General Surgery\nFaculty: Dr Sai Patro (Nuclear Medicine)\nTopic: Thyroid IV (Mechanism and role of RAI in thyroid disorders)\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:General Surgery,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Surgery] Thyroid IV (Mechanism and role of RAI in thyroid disorders) in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-29-surg-05@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260930T080000
+DTEND:20260930T090000
+SUMMARY:[Surgery] Trauma & Emergency Medicine (T & EM)
+DESCRIPTION:Subject: General Surgery\nFaculty: T & EM Faculty\nTopic: Trauma & Emergency Medicine (T & EM)\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:General Surgery,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Surgery] Trauma & Emergency Medicine (T & EM) in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-30-cmfm-t-01@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260903T080000
+DTEND:20260903T090000
+SUMMARY:[CMFM] Health Planning & Management-IV
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Sonu H Subba\nTopic: Health Planning & Management-IV\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] Health Planning & Management-IV in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-31-cmfm-t-02@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260903T140000
+DTEND:20260903T150000
+SUMMARY:[CMFM] ASHA, AWW and MPHW/ANM
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Binod Kumar Behera\nTopic: ASHA, AWW and MPHW/ANM\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] ASHA, AWW and MPHW/ANM in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-32-cmfm-t-03@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260904T140000
+DTEND:20260904T150000
+SUMMARY:[CMFM] Health Facility Assessment & Quality Assurance
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Arvind Kumar Singh\nTopic: Health Facility Assessment & Quality Assurance\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] Health Facility Assessment & Quality Assurance in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-33-cmfm-t-04@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260904T150000
+DTEND:20260904T160000
+SUMMARY:[CMFM] PCT / Revision Planning & Management
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Sonu H Subba\nTopic: PCT / Revision Planning & Management\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] PCT / Revision Planning & Management in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-34-cmfm-t-05@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260910T080000
+DTEND:20260910T090000
+SUMMARY:[CMFM] Community based Rehabilitation
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Arvind Kumar Singh\nTopic: Community based Rehabilitation\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] Community based Rehabilitation in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-35-cmfm-t-06@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260910T140000
+DTEND:20260910T150000
+SUMMARY:[CMFM] RMNCHA Overview
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Swayam Pragyan Parida\nTopic: RMNCHA Overview\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] RMNCHA Overview in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-36-cmfm-t-07@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260911T150000
+DTEND:20260911T160000
+SUMMARY:[CMFM] Respiratory Infections (Influenza)
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Arvind Kumar Singh\nTopic: Respiratory Infections (Influenza)\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] Respiratory Infections (Influenza) in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-37-cmfm-t-08@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260917T080000
+DTEND:20260917T090000
+SUMMARY:[CMFM] National Programs on Nutrition of Mothers & Children
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Arvind Kumar Singh\nTopic: National Programs on Nutrition of Mothers & Children\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] National Programs on Nutrition of Mothers & Children in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-38-cmfm-t-09@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260917T140000
+DTEND:20260917T150000
+SUMMARY:[CMFM] Family Medicine
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Sonu H Subba\nTopic: Family Medicine\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] Family Medicine in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-39-cmfm-t-10@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260918T140000
+DTEND:20260918T150000
+SUMMARY:[CMFM] PCT 2
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Swayam Pragyan Parida\nTopic: PCT 2\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] PCT 2 in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-40-cmfm-t-11@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260918T150000
+DTEND:20260918T160000
+SUMMARY:[CMFM] NITI Aayog
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Binod Kumar Behera\nTopic: NITI Aayog\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] NITI Aayog in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-41-cmfm-t-12@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260924T080000
+DTEND:20260924T090000
+SUMMARY:[CMFM] Intestinal Infections (Cholera, Typhoid)
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Swayam Pragyan Parida\nTopic: Intestinal Infections (Cholera, Typhoid)\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] Intestinal Infections (Cholera, Typhoid) in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-42-cmfm-t-13@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260924T140000
+DTEND:20260924T150000
+SUMMARY:[CMFM] Zoonosis (Taeniasis, Leishmaniasis and Hydatid)
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Arvind Kumar Singh\nTopic: Zoonosis (Taeniasis, Leishmaniasis and Hydatid)\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] Zoonosis (Taeniasis, Leishmaniasis and Hydatid) in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-43-cmfm-t-14@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260925T150000
+DTEND:20260925T160000
+SUMMARY:[CMFM] Zoonosis (KFD, Chikungunya, Salmonellosis)
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Arvind Kumar Singh\nTopic: Zoonosis (KFD, Chikungunya, Salmonellosis)\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM] Zoonosis (KFD, Chikungunya, Salmonellosis) in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-44-paed-01@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260908T080000
+DTEND:20260908T090000
+SUMMARY:[Paediatrics] Dengue
+DESCRIPTION:Subject: Paediatrics\nFaculty: Prof. Dr. Bhagirathi Dwibedi\nTopic: Dengue\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Paediatrics,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Paediatrics] Dengue in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-45-paed-02@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260922T080000
+DTEND:20260922T090000
+SUMMARY:[Paediatrics] Common bacterial infection in children
+DESCRIPTION:Subject: Paediatrics\nFaculty: Prof. Dr. Rashmi Ranjan Das\nTopic: Common bacterial infection in children\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Paediatrics,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Paediatrics] Common bacterial infection in children in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-46-paed-03@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260929T080000
+DTEND:20260929T090000
+SUMMARY:[Paediatrics] Pneumonia
+DESCRIPTION:Subject: Paediatrics\nFaculty: Prof. Dr. Rashmi Ranjan Das\nTopic: Pneumonia\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:Paediatrics,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [Paediatrics] Pneumonia in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-47-ent-01@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260903T150000
+DTEND:20260903T160000
+SUMMARY:[ENT] Anatomy of nose and paranasal sinuses
+DESCRIPTION:Subject: ENT\nFaculty: Dr Dillip Kumar Samal\nTopic: Anatomy of nose and paranasal sinuses\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:ENT,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [ENT] Anatomy of nose and paranasal sinuses in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-48-ent-02@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260910T150000
+DTEND:20260910T160000
+SUMMARY:[ENT] Nasal septum and its disorder
+DESCRIPTION:Subject: ENT\nFaculty: Dr Pradipta Kumar Parida / Dr Abhijeet Mishra\nTopic: Nasal septum and its disorder\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:ENT,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [ENT] Nasal septum and its disorder in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-49-ent-03@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260917T150000
+DTEND:20260917T160000
+SUMMARY:[ENT] Epistaxis and its management
+DESCRIPTION:Subject: ENT\nFaculty: Dr Jyoti Ranjan Das\nTopic: Epistaxis and its management\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:ENT,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [ENT] Epistaxis and its management in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-50-ent-04@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260924T150000
+DTEND:20260924T160000
+SUMMARY:[ENT] Chronic rhinosinusitis with nasal polyposis
+DESCRIPTION:Subject: ENT\nFaculty: Dr. Santosh Kumar Swain\nTopic: Chronic rhinosinusitis with nasal polyposis\nType: Theory\nGroup: all\nRoom: LT-3
+LOCATION:LT-3, AIIMS Bhubaneswar
+CATEGORIES:ENT,Theory
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [ENT] Chronic rhinosinusitis with nasal polyposis in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-51-cmfm-p-01@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260901T140000
+DTEND:20260901T170000
+SUMMARY:[CMFM Practical] Balanced Diet (ANC, PNC, DM, HTN)
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Binod Kumar Behera / SR\nTopic: Balanced Diet (ANC, PNC, DM, HTN)\nType: Practical\nGroup: Group B\nRoom: CMFM Lab / Field
+LOCATION:CMFM Lab / Field, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Practical
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM Practical] Balanced Diet (ANC, PNC, DM, HTN) in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-52-cmfm-p-02@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260907T140000
+DTEND:20260907T170000
+SUMMARY:[CMFM Practical] RCT (Randomized Controlled Trials)
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Swayam Pragyan Parida / SR\nTopic: RCT (Randomized Controlled Trials)\nType: Practical\nGroup: Group A\nRoom: CMFM Lab / Field
+LOCATION:CMFM Lab / Field, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Practical
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM Practical] RCT (Randomized Controlled Trials) in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-53-cmfm-p-03@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260908T140000
+DTEND:20260908T170000
+SUMMARY:[CMFM Practical] RCT (Randomized Controlled Trials)
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Swayam Pragyan Parida / SR\nTopic: RCT (Randomized Controlled Trials)\nType: Practical\nGroup: Group B\nRoom: CMFM Lab / Field
+LOCATION:CMFM Lab / Field, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Practical
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM Practical] RCT (Randomized Controlled Trials) in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-54-cmfm-p-04@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260914T140000
+DTEND:20260914T170000
+SUMMARY:[CMFM Practical] Normal Distribution Curve, Confidence Interval, hypothesis Testing & Test of significance
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Arvind Kumar Singh / SR\nTopic: Normal Distribution Curve, Confidence Interval, hypothesis Testing & Test of significance\nType: Practical\nGroup: Group A\nRoom: CMFM Lab / Field
+LOCATION:CMFM Lab / Field, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Practical
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM Practical] Normal Distribution Curve, Confidence Interval, hypothesis Testing & Test of significance in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-55-cmfm-p-05@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260915T140000
+DTEND:20260915T170000
+SUMMARY:[CMFM Practical] Normal Distribution Curve, Confidence Interval, hypothesis Testing & Test of significance
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Arvind Kumar Singh / SR\nTopic: Normal Distribution Curve, Confidence Interval, hypothesis Testing & Test of significance\nType: Practical\nGroup: Group B\nRoom: CMFM Lab / Field
+LOCATION:CMFM Lab / Field, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Practical
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM Practical] Normal Distribution Curve, Confidence Interval, hypothesis Testing & Test of significance in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-56-cmfm-p-06@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260921T140000
+DTEND:20260921T170000
+SUMMARY:[CMFM Practical] National Immunization Schedule & Vaccine requirement Calculation
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Swayam Pragyan Parida / SR\nTopic: National Immunization Schedule & Vaccine requirement Calculation\nType: Practical\nGroup: Group A\nRoom: CMFM Lab / Field
+LOCATION:CMFM Lab / Field, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Practical
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM Practical] National Immunization Schedule & Vaccine requirement Calculation in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-57-cmfm-p-07@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260922T140000
+DTEND:20260922T170000
+SUMMARY:[CMFM Practical] National Immunization Schedule & Vaccine requirement Calculation
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Swayam Pragyan Parida / SR\nTopic: National Immunization Schedule & Vaccine requirement Calculation\nType: Practical\nGroup: Group B\nRoom: CMFM Lab / Field
+LOCATION:CMFM Lab / Field, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Practical
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM Practical] National Immunization Schedule & Vaccine requirement Calculation in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-58-cmfm-p-08@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260928T140000
+DTEND:20260928T170000
+SUMMARY:[CMFM Practical] Management Exercises
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Sonu H Subba / SR\nTopic: Management Exercises\nType: Practical\nGroup: Group A\nRoom: CMFM Lab / Field
+LOCATION:CMFM Lab / Field, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Practical
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM Practical] Management Exercises in 15 mins
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-batch2023-7thsem-59-cmfm-p-09@aiimsbbsr
+DTSTAMP:20260923T190441Z
+DTSTART:20260929T140000
+DTEND:20260929T170000
+SUMMARY:[CMFM Practical] Management Exercises
+DESCRIPTION:Subject: Community Medicine & Family Medicine\nFaculty: Dr Sonu H Subba / SR\nTopic: Management Exercises\nType: Practical\nGroup: Group B\nRoom: CMFM Lab / Field
+LOCATION:CMFM Lab / Field, AIIMS Bhubaneswar
+CATEGORIES:Community Medicine & Family Medicine,Practical
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: [CMFM Practical] Management Exercises in 15 mins
+END:VALARM
+END:VEVENT
+END:VCALENDAR
