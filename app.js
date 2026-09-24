@@ -157,9 +157,36 @@ const EMBEDDED_SCHEDULE = [
 
 /* ---------- APPLICATION STATE ---------- */
 let allEvents       = [];
-// Default base reference week: Week 1 of September 2026 (starting Monday 31 Aug 2026)
+// Base reference Monday: Week 1 of September 2026 (starting Monday 31 Aug 2026)
 const BASE_MONDAY   = new Date(2026, 7, 31); // 31 Aug 2026 (Month is 0-indexed: 7 = Aug)
-let weekOffset      = 0;                     // 0 = week of 31 Aug – 06 Sep 2026
+
+/**
+ * Calculates week offset dynamically so the app always displays the present date by default
+ * rather than hardcoding to the 1st of the month.
+ */
+function calculateCurrentWeekOffset() {
+  const now = new Date();
+  // Monday = 0, Tuesday = 1, ... Sunday = 6
+  const dow = (now.getDay() + 6) % 7;
+  const currentMonday = new Date(now);
+  currentMonday.setDate(now.getDate() - dow);
+  currentMonday.setHours(0, 0, 0, 0);
+
+  const base = new Date(BASE_MONDAY);
+  base.setHours(0, 0, 0, 0);
+
+  const diffMs = currentMonday.getTime() - base.getTime();
+  const calculatedOffset = Math.round(diffMs / (7 * 24 * 60 * 60 * 1000));
+
+  // If user date is within September 2026 weeks (0 to 4), use it:
+  if (calculatedOffset >= 0 && calculatedOffset <= 4) {
+    return calculatedOffset;
+  }
+  // If beyond September 2026, default to Week 4 (offset 3) where active teaching was
+  return (calculatedOffset > 4) ? 3 : 0;
+}
+
+let weekOffset      = calculateCurrentWeekOffset(); // Automatically defaults to today!
 let activeDept      = 'all';
 let activeType      = 'all';
 let activeCohort    = 'all';
@@ -167,7 +194,7 @@ let activeView      = 'agenda'; // Default view (supports 'agenda', 'grid', 'bot
 let searchQuery     = '';
 let activeEvent     = null;
 let calViewDate     = new Date(2026, 8, 1);  // September 2026 (8 = Sep)
-let calSelectedDate = '2026-09-01';
+let calSelectedDate = toDateKey(new Date());
 
 /* ---------- UTILITY FUNCTIONS ---------- */
 function toMinutes(timeStr) {
@@ -210,7 +237,7 @@ function formatShortDate(date) {
 function formatNiceDate(dateInput) {
   if (!dateInput) return '';
   const d = (typeof dateInput === 'string') ? parseDate(dateInput) : dateInput;
-  return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+  return d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' });
 }
 
 function getWeekStart(offset = 0) {
@@ -224,6 +251,63 @@ function escapeHtml(str) {
   return String(str || '').replace(/[&<>"']/g, m => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   }[m] || m));
+}
+
+/**
+ * Updates the persistent Today Banner at top of page
+ */
+function updateTodayBanner() {
+  const banner = document.getElementById('today-callout-banner');
+  if (!banner) return;
+
+  const now = new Date();
+  const todayKey = toDateKey(now);
+  const dateStr = now.toLocaleDateString('en-GB', {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
+  });
+
+  const dateEl = document.getElementById('today-banner-date');
+  if (dateEl) dateEl.textContent = dateStr;
+
+  const todayClasses = allEvents.filter(e => e.date === todayKey);
+  const statusEl = document.getElementById('today-banner-status');
+  if (statusEl) {
+    if (todayClasses.length > 0) {
+      statusEl.textContent = `${todayClasses.length} ${todayClasses.length === 1 ? 'class' : 'classes'} today`;
+      statusEl.className = 'today-status-badge has-classes';
+    } else {
+      statusEl.textContent = 'No classes today';
+      statusEl.className = 'today-status-badge no-classes';
+    }
+  }
+}
+
+/**
+ * Scrolls smoothly to today's card block (Agenda) or today's column (Grid)
+ */
+function scrollToToday(smooth = true) {
+  const behavior = smooth ? 'smooth' : 'auto';
+
+  if (activeView === 'agenda') {
+    const todayBlock = document.getElementById('agenda-today-card') || document.querySelector('.agenda-day-block.is-today-block');
+    if (todayBlock) {
+      todayBlock.scrollIntoView({ behavior, block: 'start' });
+      todayBlock.classList.remove('pulse-highlight');
+      void todayBlock.offsetWidth;
+      todayBlock.classList.add('pulse-highlight');
+    }
+  } else if (activeView === 'grid') {
+    const todayCol = document.querySelector('.grid-day-header.is-today-col');
+    const gridContainer = document.getElementById('grid-view-container');
+    if (todayCol && gridContainer) {
+      const timeColWidth = window.innerWidth <= 768 ? 50 : 60;
+      const scrollTarget = todayCol.offsetLeft - timeColWidth;
+      gridContainer.scrollTo({ left: Math.max(0, scrollTarget), behavior });
+    }
+  }
 }
 
 /* ---------- FILTERING ENGINE ---------- */
@@ -460,14 +544,17 @@ function renderAgendaView(visibleEvents, weekStart, today) {
     dayEvents.sort((a, b) => toMinutes(a.start_time) - toMinutes(b.start_time));
 
     const dayBlock = document.createElement('div');
-    dayBlock.className = 'agenda-day-block';
+    dayBlock.className = `agenda-day-block${isToday ? ' is-today-block' : ''}`;
+    if (isToday) {
+      dayBlock.id = 'agenda-today-card';
+    }
 
     const header = document.createElement('div');
     header.className = 'agenda-day-header';
     header.innerHTML = `
       <div class="agenda-day-title">
-        <span>${dayName}, ${formatNiceDate(dayDate)}</span>
-        ${isToday ? `<span class="agenda-today-tag">TODAY</span>` : ''}
+        <span>${formatNiceDate(dayDate)}</span>
+        ${isToday ? `<span class="agenda-today-tag">🔴 TODAY</span>` : ''}
       </div>
       <div class="agenda-day-count">${dayEvents.length} ${dayEvents.length === 1 ? 'class' : 'classes'}</div>
     `;
@@ -824,7 +911,13 @@ async function initializeSchedule() {
     console.log('Using pre-bundled schedule dataset.');
   }
 
+  updateTodayBanner();
   renderAllViews();
+
+  // Smoothly position on today's classes on initial page load
+  setTimeout(() => {
+    scrollToToday(false);
+  }, 120);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -841,28 +934,14 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAllViews();
   });
 
-  document.getElementById('today-btn')?.addEventListener('click', () => {
-    // Jump to real-world current week relative to BASE_MONDAY
-    const now = new Date();
-    const dow = (now.getDay() + 6) % 7;
-    const currentMonday = new Date(now);
-    currentMonday.setDate(now.getDate() - dow);
-    currentMonday.setHours(0, 0, 0, 0);
-
-    const diffMs = currentMonday.getTime() - BASE_MONDAY.getTime();
-    weekOffset = Math.round(diffMs / (7 * 24 * 60 * 60 * 1000));
+  // Jump directly to Present Date (Today)
+  const jumpToTodaySchedule = () => {
+    weekOffset = calculateCurrentWeekOffset();
     renderAllViews();
-  });
-
-  document.getElementById('sep-jump-btn')?.addEventListener('click', () => {
-    weekOffset = 0; // Jump to Week 1 of September 2026
-    renderAllViews();
-  });
-
-  // Quick Date Picker
-  document.getElementById('quick-date-picker')?.addEventListener('change', (e) => {
-    if (e.target.value) jumpToDate(e.target.value);
-  });
+    scrollToToday(true);
+  };
+  document.getElementById('today-btn')?.addEventListener('click', jumpToTodaySchedule);
+  document.getElementById('jump-today-btn')?.addEventListener('click', jumpToTodaySchedule);
 
   // View Switcher (Agenda vs Grid)
   document.querySelectorAll('#view-mode-selector .segmented-btn').forEach(btn => {
@@ -871,37 +950,38 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
       activeView = btn.dataset.view;
       renderAllViews();
+      if (activeView === 'grid') {
+        setTimeout(() => scrollToToday(true), 60);
+      }
     });
   });
 
-  // Department Filter Chips
-  document.querySelectorAll('#dept-filter-chips .chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('#dept-filter-chips .chip').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeDept = btn.dataset.dept;
-      renderAllViews();
-    });
+  // Simplified Department Filter Dropdown
+  document.getElementById('dept-filter-select')?.addEventListener('change', (e) => {
+    activeDept = e.target.value;
+    renderAllViews();
   });
 
-  // Session Type Filter
-  document.querySelectorAll('#type-filter-group .segmented-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('#type-filter-group .segmented-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeType = btn.dataset.type;
-      renderAllViews();
-    });
+  // Secondary Filters Drawer Toggle
+  const moreFiltersBtn = document.getElementById('toggle-more-filters-btn');
+  const secDrawer = document.getElementById('secondary-filters-drawer');
+  moreFiltersBtn?.addEventListener('click', () => {
+    if (secDrawer) {
+      const isHidden = secDrawer.classList.toggle('hidden');
+      moreFiltersBtn.classList.toggle('active', !isHidden);
+    }
   });
 
-  // Practical Cohort Filter
-  document.querySelectorAll('#cohort-filter-group .segmented-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('#cohort-filter-group .segmented-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeCohort = btn.dataset.group;
-      renderAllViews();
-    });
+  // Session Type Dropdown Filter
+  document.getElementById('type-filter-select')?.addEventListener('change', (e) => {
+    activeType = e.target.value;
+    renderAllViews();
+  });
+
+  // Practical Cohort Dropdown Filter
+  document.getElementById('cohort-filter-select')?.addEventListener('change', (e) => {
+    activeCohort = e.target.value;
+    renderAllViews();
   });
 
   // Live Search
@@ -927,9 +1007,12 @@ document.addEventListener('DOMContentLoaded', () => {
     activeCohort = 'all';
     searchQuery  = '';
     if (searchInput) searchInput.value = '';
-    document.querySelectorAll('#dept-filter-chips .chip').forEach(b => b.classList.toggle('active', b.dataset.dept === 'all'));
-    document.querySelectorAll('#type-filter-group .segmented-btn').forEach(b => b.classList.toggle('active', b.dataset.type === 'all'));
-    document.querySelectorAll('#cohort-filter-group .segmented-btn').forEach(b => b.classList.toggle('active', b.dataset.group === 'all'));
+    const deptSelect = document.getElementById('dept-filter-select');
+    if (deptSelect) deptSelect.value = 'all';
+    const typeSelect = document.getElementById('type-filter-select');
+    if (typeSelect) typeSelect.value = 'all';
+    const cohortSelect = document.getElementById('cohort-filter-select');
+    if (cohortSelect) cohortSelect.value = 'all';
     renderAllViews();
   });
 

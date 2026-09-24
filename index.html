@@ -36,7 +36,7 @@
         </div>
       </div>
 
-      <!-- Action Navigation -->
+      <!-- Action Navigation (Clean & Essential) -->
       <div class="header-actions">
         <!-- Monthly Calendar Button -->
         <button class="header-btn" id="open-cal-modal-btn" title="Open Interactive Month Calendar">
@@ -60,58 +60,31 @@
           <span class="btn-text-full">Sync Phone (.ICS)</span>
           <span class="btn-text-compact">Sync (.ICS)</span>
         </button>
-
-        <!-- GitHub Deployment Helper -->
-        <button class="header-btn github-btn" id="open-github-btn" title="How to publish on GitHub Pages">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
-          <span class="btn-text-full">GitHub Guide</span>
-          <span class="btn-text-compact">Guide</span>
-        </button>
       </div>
 
     </div>
   </header>
 
-  <!-- ==================== ACADEMIC MILESTONES NOTICE STRIP ==================== -->
-  <aside class="academic-strip" aria-label="Semester Milestones">
-    <div class="strip-container">
-      <div class="strip-item">
-        <span class="strip-tag">7TH SEMESTER:</span>
-        <span class="strip-text">28 July – 31 Dec 2026</span>
-      </div>
-      <div class="strip-divider">•</div>
-      <div class="strip-item">
-        <span class="strip-tag">PRE-PROF EXAMS:</span>
-        <span class="strip-text">13 – 23 Nov 2026</span>
-      </div>
-      <div class="strip-divider">•</div>
-      <div class="strip-item">
-        <span class="strip-tag">PREP LEAVE:</span>
-        <span class="strip-text">24 – 30 Nov 2026</span>
-      </div>
-      <div class="strip-divider">•</div>
-      <div class="strip-item">
-        <span class="strip-tag">3RD PROF (PART I):</span>
-        <span class="strip-text">01 – 31 Dec 2026</span>
-      </div>
-      <div class="strip-divider">•</div>
-      <div class="strip-item">
-        <span class="strip-tag">8TH SEMESTER:</span>
-        <span class="strip-text">01 Jan 2027</span>
-      </div>
+  <!-- ==================== TODAY STATUS CALLOUT ==================== -->
+  <div class="today-callout-banner" id="today-callout-banner">
+    <div class="today-banner-left">
+      <span class="live-pulse-dot"></span>
+      <span class="today-date-text" id="today-banner-date">Thursday, 24 Sep 2026</span>
+      <span class="today-status-badge has-classes" id="today-banner-status">3 classes today</span>
     </div>
-  </aside>
+    <button type="button" class="btn-jump-today" id="jump-today-btn" title="Scroll directly to today's schedule">
+      <span>Go to Today ↓</span>
+    </button>
+  </div>
 
-  <!-- ==================== CONTROLS TOOLBAR ==================== -->
+  <!-- ==================== CONTROLS TOOLBAR (SIMPLIFIED) ==================== -->
   <main class="app-main-layout">
     
     <section class="toolbar-section">
-      <div class="toolbar-card">
+      <div class="toolbar-card simple-toolbar">
         
-        <!-- Row 1: Week Navigation & Mode Switcher -->
-        <div class="toolbar-primary-row">
+        <!-- Row 1: Week Navigation & View Toggle -->
+        <div class="toolbar-row-main">
           
           <!-- Week Navigator -->
           <div class="week-nav-group">
@@ -132,29 +105,10 @@
               </svg>
             </button>
 
-            <button class="btn-today" id="today-btn" title="Jump to current week">Current</button>
-            <button class="btn-today secondary" id="sep-jump-btn" title="Jump to start of September 2026">Sep '26</button>
+            <button class="btn-today" id="today-btn" title="Jump to current week">Today</button>
           </div>
 
-          <!-- Quick Date Jump & Search -->
-          <div class="toolbar-center-tools">
-            <div class="date-picker-wrap">
-              <label for="quick-date-picker" class="visually-hidden">Pick a Date</label>
-              <input type="date" id="quick-date-picker" class="quick-date-input" value="2026-09-01" min="2026-09-01" max="2026-09-30" title="Jump to any date in September 2026">
-            </div>
-
-            <!-- Live Search Field -->
-            <div class="finder-search-field">
-              <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-              </svg>
-              <input type="text" id="search-input" class="search-input" placeholder="Search topic, doctor (e.g. Dengue, Retina, RCT)..." autocomplete="off">
-              <button type="button" id="clear-search-btn" class="clear-search-btn hidden" aria-label="Clear Search">&times;</button>
-            </div>
-          </div>
-
-          <!-- View Switcher (Agenda vs Grid vs Both) -->
+          <!-- View Switcher (Agenda vs Grid) -->
           <div class="segmented-control view-mode-control" id="view-mode-selector">
             <button class="segmented-btn active" data-view="agenda" id="view-agenda-btn" title="Daily Agenda Cards">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -177,52 +131,64 @@
               </svg>
               <span>Grid</span>
             </button>
-            <button class="segmented-btn" data-view="both" id="view-both-btn" title="View Grid & Agenda Together">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <rect x="3" y="3" width="18" height="7" rx="1.5"></rect>
-                <rect x="3" y="14" width="18" height="7" rx="1.5"></rect>
-              </svg>
-              <span>Both</span>
-            </button>
           </div>
 
         </div>
 
-        <!-- Row 2: Department Filter Chips -->
-        <div class="filter-chips-row">
-          <span class="filter-label">Department:</span>
-          <div class="chips-scroll-container" id="dept-filter-chips">
-            <button class="chip active" data-dept="all">All Departments (59)</button>
-            <button class="chip chip-opht" data-dept="Ophthalmology">Ophthalmology (14)</button>
-            <button class="chip chip-cmfm" data-dept="Community Medicine & Family Medicine">CMFM (23)</button>
-            <button class="chip chip-med" data-dept="General Medicine">Medicine (6)</button>
-            <button class="chip chip-surg" data-dept="General Surgery">Surgery (5)</button>
-            <button class="chip chip-obg" data-dept="Obstetrics & Gynaecology">OBG (4)</button>
-            <button class="chip chip-ent" data-dept="ENT">ENT (4)</button>
-            <button class="chip chip-paed" data-dept="Paediatrics">Paediatrics (3)</button>
+        <!-- Row 2: Search Input + Department Dropdown + Filters Drawer Toggle -->
+        <div class="toolbar-row-filters">
+          <!-- Search Field -->
+          <div class="finder-search-field">
+            <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="search-input" class="search-input" placeholder="Search topic or faculty (e.g. Dengue, Retina, RCT)..." autocomplete="off">
+            <button type="button" id="clear-search-btn" class="clear-search-btn hidden" aria-label="Clear Search">&times;</button>
           </div>
+
+          <!-- Clean Department Dropdown -->
+          <div class="filter-dropdown-wrap">
+            <select id="dept-filter-select" class="clean-select" aria-label="Filter by department">
+              <option value="all">All Departments (59)</option>
+              <option value="Ophthalmology">Ophthalmology (14)</option>
+              <option value="Community Medicine & Family Medicine">CMFM (23)</option>
+              <option value="General Medicine">Medicine (6)</option>
+              <option value="General Surgery">Surgery (5)</option>
+              <option value="Obstetrics & Gynaecology">OBG (4)</option>
+              <option value="ENT">ENT (4)</option>
+              <option value="Paediatrics">Paediatrics (3)</option>
+            </select>
+          </div>
+
+          <!-- Filters Toggle Button -->
+          <button type="button" class="btn-more-filters" id="toggle-more-filters-btn" title="Toggle Theory/Practical and Group filters">
+            <span>Filter</span>
+            <span class="filter-arrow">▾</span>
+          </button>
         </div>
 
-        <!-- Row 3: Class Type & Cohort Filter -->
-        <div class="filter-sub-row">
-          <div class="sub-filter-group">
-            <span class="filter-label">Session Type:</span>
-            <div class="segmented-control mini-control" id="type-filter-group">
-              <button class="segmented-btn active" data-type="all">All Types</button>
-              <button class="segmented-btn" data-type="Theory">📚 Theory (50)</button>
-              <button class="segmented-btn" data-type="Practical">🔬 Practicals (9)</button>
-            </div>
+        <!-- Collapsible Secondary Filters Drawer (Hidden by default) -->
+        <div class="secondary-filters-drawer hidden" id="secondary-filters-drawer">
+          <div class="sec-filter-group">
+            <span class="sec-filter-label">Session Type:</span>
+            <select id="type-filter-select" class="clean-select mini">
+              <option value="all">All Types (Theory & Practical)</option>
+              <option value="Theory">Theory Only (50)</option>
+              <option value="Practical">Practicals Only (9)</option>
+            </select>
           </div>
 
-          <div class="sub-filter-group">
-            <span class="filter-label">Practical Cohort:</span>
-            <div class="segmented-control mini-control" id="cohort-filter-group">
-              <button class="segmented-btn active" data-group="all">All Groups</button>
-              <button class="segmented-btn" data-group="Group A">Group A (Mon)</button>
-              <button class="segmented-btn" data-group="Group B">Group B (Tue)</button>
-            </div>
+          <div class="sec-filter-group">
+            <span class="sec-filter-label">Cohort:</span>
+            <select id="cohort-filter-select" class="clean-select mini">
+              <option value="all">All Groups</option>
+              <option value="Group A">Group A (Mon)</option>
+              <option value="Group B">Group B (Tue)</option>
+            </select>
           </div>
 
+          <button type="button" class="btn-reset-clean" id="reset-filters-btn">Reset</button>
           <div class="active-count-badge" id="session-count-pill">Showing 59 sessions</div>
         </div>
 
