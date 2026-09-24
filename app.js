@@ -186,11 +186,23 @@ function calculateCurrentWeekOffset() {
   return (calculatedOffset > 4) ? 3 : 0;
 }
 
+/**
+ * Resolves the default view mode:
+ * On mobile devices (screen width <= 768px), defaults to 'grid' view as requested.
+ * On desktop devices, defaults to 'agenda' view.
+ */
+function getDefaultViewMode() {
+  if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+    return 'grid';
+  }
+  return 'agenda';
+}
+
 let weekOffset      = calculateCurrentWeekOffset(); // Automatically defaults to today!
 let activeDept      = 'all';
 let activeType      = 'all';
 let activeCohort    = 'all';
-let activeView      = 'agenda'; // Default view (supports 'agenda', 'grid', 'both')
+let activeView      = getDefaultViewMode(); // Defaults to grid on mobile!
 let searchQuery     = '';
 let activeEvent     = null;
 let calViewDate     = new Date(2026, 8, 1);  // September 2026 (8 = Sep)
@@ -306,6 +318,12 @@ function scrollToToday(smooth = true) {
       const timeColWidth = window.innerWidth <= 768 ? 50 : 60;
       const scrollTarget = todayCol.offsetLeft - timeColWidth;
       gridContainer.scrollTo({ left: Math.max(0, scrollTarget), behavior });
+      if (todayCol.dataset.dayIndex !== undefined) {
+        const idx = parseInt(todayCol.dataset.dayIndex, 10);
+        document.querySelectorAll('#grid-day-jump-strip .day-jump-chip').forEach(b => {
+          b.classList.toggle('active', parseInt(b.dataset.dayIdx, 10) === idx);
+        });
+      }
     }
   }
 }
@@ -910,6 +928,9 @@ async function initializeSchedule() {
   } catch (err) {
     console.log('Using pre-bundled schedule dataset.');
   }
+
+  // Establish default view (Mobile = Grid, Desktop = Agenda)
+  activeView = getDefaultViewMode();
 
   updateTodayBanner();
   renderAllViews();
