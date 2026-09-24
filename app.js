@@ -842,11 +842,270 @@ function openGitHubModal() {
   document.body.style.overflow = 'hidden';
 }
 
-function closeGitHubModal() {
-  document.getElementById('github-modal').classList.add('hidden');
-  document.body.style.overflow = '';
+/* ==========================================================================
+   CLASS NOTIFICATION & REMINDER SYSTEM
+   ========================================================================== */
+const REMINDER_SETTINGS_KEY = 'aiims_batch2023_reminder_settings';
+let reminderSettings = {
+  enabled: true, // Default to enabled for students
+  leadTime: 10,  // 10 minutes before class
+  sound: true
+};
+
+let notifiedEventsMap = {};
+let toastTimer = null;
+
+function loadReminderSettings() {
+  try {
+    const raw = localStorage.getItem(REMINDER_SETTINGS_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      reminderSettings = { ...reminderSettings, ...parsed };
+    }
+  } catch (e) {}
+  updateReminderUI();
 }
 
+function saveReminderSettings() {
+  try {
+    localStorage.setItem(REMINDER_SETTINGS_KEY, JSON.stringify(reminderSettings));
+  } catch (e) {}
+  updateReminderUI();
+}
+
+function updateReminderUI() {
+  const dot = document.getElementById('notif-header-dot');
+  if (dot) {
+    dot.classList.toggle('active', !!reminderSettings.enabled);
+  }
+
+  const masterToggle = document.getElementById('notif-master-toggle');
+  if (masterToggle) {
+    masterToggle.checked = !!reminderSettings.enabled;
+  }
+
+  const leadSelect = document.getElementById('notif-lead-time');
+  if (leadSelect) {
+    leadSelect.value = String(reminderSettings.leadTime || 10);
+  }
+
+  const soundToggle = document.getElementById('notif-sound-toggle');
+  if (soundToggle) {
+    soundToggle.checked = !!reminderSettings.sound;
+  }
+
+  updatePermissionBadge();
+}
+
+function updatePermissionBadge() {
+  const badge = document.getElementById('notif-permission-badge');
+  if (!badge) return;
+
+  if (!('Notification' in window)) {
+    badge.textContent = 'In-App Alerts Only';
+    badge.className = 'modal-badge notif-perm-badge default';
+    return;
+  }
+
+  if (Notification.permission === 'granted') {
+    badge.textContent = 'Permission Granted';
+    badge.className = 'modal-badge notif-perm-badge granted';
+  } else if (Notification.permission === 'denied') {
+    badge.textContent = 'Permission Blocked';
+    badge.className = 'modal-badge notif-perm-badge denied';
+  } else {
+    badge.textContent = 'Click to Enable';
+    badge.className = 'modal-badge notif-perm-badge default';
+  }
+}
+
+/**
+ * Plays a gentle harmonic two-tone medical chime using Web Audio API
+ */
+function playReminderChime() {
+  try {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return;
+    const ctx = new AudioCtx();
+    const now = ctx.currentTime;
+
+    const osc1 = ctx.createOscillator();
+    const osc2 = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc1.type = 'sine';
+    osc1.frequency.setValueAtTime(880, now); // A5
+    osc1.frequency.exponentialRampToValueAtTime(1108, now + 0.15); // C#6
+
+    osc2.type = 'triangle';
+    osc2.frequency.setValueAtTime(1108, now + 0.1);
+    osc2.frequency.exponentialRampToValueAtTime(1320, now + 0.3); // E6
+
+    gain.gain.setValueAtTime(0.25, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
+
+    osc1.connect(gain);
+    osc2.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc1.start(now);
+    osc2.start(now + 0.1);
+    osc1.stop(now + 0.65);
+    osc2.stop(now + 0.65);
+  } catch (e) {
+    console.log('Chime sound note:', e);
+  }
+}
+
+/**
+ * Shows an animated in-app toast notification
+ */
+function showInAppToast(title, body) {
+  const toast = document.getElementById('toast-notification');
+  const titleEl = document.getElementById('toast-title');
+  const bodyEl = document.getElementById('toast-body');
+  if (!toast) return;
+
+  if (titleEl) titleEl.textContent = title;
+  if (bodyEl) bodyEl.textContent = body;
+
+  toast.classList.remove('hidden');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.add('hidden');
+  }, 8000);
+}
+
+/**
+ * Sends a notification via Browser Notifications API, In-App Toast, and Sound Chime
+ */
+function sendClassNotification(title, body, tag = 'class-alert') {
+  if (reminderSettings.sound) {
+    playReminderChime();
+  }
+
+  showInAppToast(title, body);
+
+  if ('Notification' in window && Notification.permission === 'granted') {
+    try {
+      const n = new Notification(title, {
+        body: body,
+        icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%231E3A8A"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
+        tag: tag,
+        requireInteraction: true
+      });
+      n.onclick = () => {
+        window.focus();
+        n.close();
+      };
+    } catch (err) {
+      console.warn('Native notification issue:', err);
+    }
+  }
+}
+
+/**
+ * Periodic checker that evaluates upcoming classes and dispatches pre-class notifications
+ */
+function checkUpcomingClasses() {
+  const now = new Date();
+  const todayKey = toDateKey(now);
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+  if (reminderSettings.enabled) {
+    const todayEvents = allEvents.filter(e => e.date === todayKey);
+    const leadMin = parseInt(reminderSettings.leadTime, 10) || 10;
+
+    todayEvents.forEach(evt => {
+      const startMin = toMinutes(evt.start_time);
+      const triggerMin = startMin - leadMin;
+      const notifKey = `aiims_notif_${evt.id}_${todayKey}_${leadMin}`;
+
+      if (currentMinutes >= triggerMin && currentMinutes < startMin) {
+        let alreadyFired = notifiedEventsMap[notifKey];
+        if (!alreadyFired) {
+          try {
+            alreadyFired = localStorage.getItem(notifKey) === '1';
+          } catch(e) {}
+        }
+
+        if (!alreadyFired) {
+          notifiedEventsMap[notifKey] = true;
+          try { localStorage.setItem(notifKey, '1'); } catch(e) {}
+
+          const minsLeft = startMin - currentMinutes;
+          const timeLabel = minsLeft <= 1 ? 'starting right now' : `starting in ${minsLeft} minutes`;
+          const title = `🔔 Class Reminder (${evt.subject || evt.department})`;
+          const body = `${evt.topic}\n⏰ ${timeLabel} (${formatTime(evt.start_time)})\n📍 ${evt.room || 'LT-3'} • 👨‍⚕️ ${evt.faculty}`;
+
+          sendClassNotification(title, body, `class-${evt.id}`);
+        }
+      }
+    });
+  }
+
+  updateNextClassDisplay();
+}
+
+/**
+ * Finds next upcoming class and renders details in the reminder modal
+ */
+function updateNextClassDisplay() {
+  const topicEl = document.getElementById('next-class-topic');
+  const metaEl  = document.getElementById('next-class-meta');
+  const tagEl   = document.getElementById('next-class-tag');
+  if (!topicEl || !metaEl) return;
+
+  const now = new Date();
+  const todayKey = toDateKey(now);
+  const currentMin = now.getHours() * 60 + now.getMinutes();
+
+  // 1. Look for remaining classes today
+  const todayFuture = allEvents
+    .filter(e => e.date === todayKey && toMinutes(e.start_time) > currentMin)
+    .sort((a, b) => toMinutes(a.start_time) - toMinutes(b.start_time));
+
+  if (todayFuture.length > 0) {
+    const nextEvt = todayFuture[0];
+    const diffMin = toMinutes(nextEvt.start_time) - currentMin;
+    const hours = Math.floor(diffMin / 60);
+    const mins = diffMin % 60;
+    const timeUntilStr = hours > 0 ? `${hours}h ${mins}m` : `${mins}m`;
+
+    if (tagEl) tagEl.textContent = `NEXT CLASS TODAY • STARTS IN ${timeUntilStr.toUpperCase()}`;
+    topicEl.textContent = `[${nextEvt.subject || nextEvt.department}] ${nextEvt.topic}`;
+    metaEl.textContent = `⏰ Today at ${formatTime(nextEvt.start_time)} • 📍 ${nextEvt.room || 'LT-3'} • 👨‍⚕️ ${nextEvt.faculty}`;
+    return;
+  }
+
+  // 2. Look for future classes after today
+  const upcomingEvents = allEvents
+    .filter(e => e.date > todayKey)
+    .sort((a, b) => a.date.localeCompare(b.date) || (toMinutes(a.start_time) - toMinutes(b.start_time)));
+
+  if (upcomingEvents.length > 0) {
+    const nextEvt = upcomingEvents[0];
+    if (tagEl) tagEl.textContent = `UPCOMING CLASS • ${formatNiceDate(nextEvt.date).toUpperCase()}`;
+    topicEl.textContent = `[${nextEvt.subject || nextEvt.department}] ${nextEvt.topic}`;
+    metaEl.textContent = `📅 ${formatNiceDate(nextEvt.date)} at ${formatTime(nextEvt.start_time)} • 📍 ${nextEvt.room || 'LT-3'} • 👨‍⚕️ ${nextEvt.faculty}`;
+  } else {
+    if (tagEl) tagEl.textContent = 'SEMESTER SCHEDULE COMPLETE';
+    topicEl.textContent = 'No more classes scheduled for this period';
+    metaEl.textContent = 'All September 2026 teaching sessions concluded.';
+  }
+}
+
+function openReminderModal() {
+  loadReminderSettings();
+  updateNextClassDisplay();
+  document.getElementById('reminder-modal')?.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeReminderModal() {
+  document.getElementById('reminder-modal')?.classList.add('hidden');
+  document.body.style.overflow = '';
+}
 
 /* ---------- PHONE CALENDAR SYNC (.ICS EXPORT) ---------- */
 function pad(n) { return String(n).padStart(2, '0'); }
@@ -934,6 +1193,12 @@ async function initializeSchedule() {
 
   updateTodayBanner();
   renderAllViews();
+
+  // Initialize Class Notification Engine & Pre-Class Checker
+  loadReminderSettings();
+  checkUpcomingClasses();
+  if (reminderTimer) clearInterval(reminderTimer);
+  reminderTimer = setInterval(checkUpcomingClasses, 30000); // Check every 30 seconds
 
   // Smoothly position on today's classes on initial page load
   setTimeout(() => {
@@ -1058,6 +1323,67 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target.id === 'github-modal') closeGitHubModal();
   });
 
+  // ==================== REMINDER & NOTIFICATION LISTENERS ====================
+  document.getElementById('open-notif-modal-btn')?.addEventListener('click', openReminderModal);
+  document.getElementById('reminder-modal-close')?.addEventListener('click', closeReminderModal);
+  document.getElementById('reminder-modal-dismiss')?.addEventListener('click', closeReminderModal);
+  document.getElementById('reminder-modal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'reminder-modal') closeReminderModal();
+  });
+
+  document.getElementById('toast-close-btn')?.addEventListener('click', () => {
+    document.getElementById('toast-notification')?.classList.add('hidden');
+  });
+
+  document.getElementById('notif-master-toggle')?.addEventListener('change', async (e) => {
+    reminderSettings.enabled = e.target.checked;
+    if (reminderSettings.enabled) {
+      if ('Notification' in window && Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+        const perm = await Notification.requestPermission();
+        updatePermissionBadge();
+        if (perm !== 'granted') {
+          showInAppToast('In-App Alerts Active', 'Browser popup alerts were not enabled, but you will still receive in-app alert toasts & audio chimes.');
+        } else {
+          showInAppToast('Notifications Active', `You will receive alerts ${reminderSettings.leadTime || 10} minutes before every class.`);
+        }
+      }
+    }
+    saveReminderSettings();
+    checkUpcomingClasses();
+  });
+
+  document.getElementById('notif-lead-time')?.addEventListener('change', (e) => {
+    reminderSettings.leadTime = parseInt(e.target.value, 10) || 10;
+    saveReminderSettings();
+    checkUpcomingClasses();
+  });
+
+  document.getElementById('notif-sound-toggle')?.addEventListener('change', (e) => {
+    reminderSettings.sound = e.target.checked;
+    saveReminderSettings();
+    if (reminderSettings.sound) {
+      playReminderChime();
+    }
+  });
+
+  document.getElementById('test-notif-btn')?.addEventListener('click', async () => {
+    if ('Notification' in window && Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+      await Notification.requestPermission();
+      updatePermissionBadge();
+    }
+    const lead = reminderSettings.leadTime || 10;
+    sendClassNotification(
+      `🔔 Class in ${lead}m: Intestinal Infections`,
+      `👨‍⚕️ Dr Swayam Pragyan Parida\n📍 LT-3 • ⏰ 8:00 AM – 9:00 AM\n(Test Notification Successful!)`,
+      'test-notif'
+    );
+  });
+
+  document.getElementById('reminder-modal-sync-btn')?.addEventListener('click', () => {
+    closeReminderModal();
+    downloadICS();
+  });
+
   // Sync Phone Calendar (.ICS)
   document.getElementById('sync-phone-btn')?.addEventListener('click', downloadICS);
   document.getElementById('footer-sync-btn')?.addEventListener('click', downloadICS);
@@ -1111,6 +1437,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') {
       closeDetailModal();
       closeCalendarModal();
+      closeReminderModal();
       closeGitHubModal();
     } else if (e.altKey && e.key === 'ArrowLeft') {
       weekOffset--;

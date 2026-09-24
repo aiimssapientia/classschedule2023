@@ -50,6 +50,17 @@
           <span class="btn-text-compact">Calendar</span>
         </button>
 
+        <!-- Class Reminders / Notification Button -->
+        <button class="header-btn" id="open-notif-modal-btn" title="Class Notification & Reminder Settings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="btn-text-full">Reminders</span>
+          <span class="btn-text-compact">Alerts</span>
+          <span class="notif-indicator-dot" id="notif-header-dot"></span>
+        </button>
+
         <!-- 1-Click Phone Calendar Sync (.ICS) -->
         <button class="header-btn primary-action" id="sync-phone-btn" title="Sync all 59 classes to Google Calendar / Apple Calendar">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -384,7 +395,102 @@
     </div>
   </div>
 
-  <!-- ==================== MODAL 3: GITHUB DEPLOYMENT GUIDE MODAL ==================== -->
+  <!-- ==================== IN-APP NOTIFICATION TOAST ==================== -->
+  <div id="toast-notification" class="toast-notification hidden" role="alert" aria-live="assertive">
+    <div class="toast-icon">🔔</div>
+    <div class="toast-content">
+      <div class="toast-title" id="toast-title">Class Reminder</div>
+      <div class="toast-body" id="toast-body">Upcoming class details...</div>
+    </div>
+    <button type="button" class="toast-close-btn" id="toast-close-btn" aria-label="Dismiss">&times;</button>
+  </div>
+
+  <!-- ==================== MODAL 3: CLASS REMINDERS & NOTIFICATION SETTINGS ==================== -->
+  <div class="modal-backdrop hidden" id="reminder-modal" role="dialog" aria-modal="true" aria-labelledby="reminder-modal-title">
+    <div class="modal-card reminder-modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-badge-group">
+            <span class="modal-badge" style="background:#EFF6FF; color:#1E40AF; border:1px solid #93C5FD;">🔔 Class Alert Engine</span>
+            <span class="modal-badge notif-perm-badge" id="notif-permission-badge">Checking...</span>
+          </div>
+          <h3 class="modal-title" id="reminder-modal-title">Class Notifications & Alarms</h3>
+          <p class="modal-date-strip">Receive reminders before every lecture and practical session</p>
+        </div>
+        <button class="modal-close-icon" id="reminder-modal-close" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Next Upcoming Class Countdown Card -->
+        <div class="next-class-card" id="next-class-card">
+          <div class="next-class-header">
+            <span class="next-class-pulse"></span>
+            <span class="next-class-tag" id="next-class-tag">NEXT UPCOMING CLASS</span>
+          </div>
+          <div class="next-class-topic" id="next-class-topic">Calculating next lecture...</div>
+          <div class="next-class-meta" id="next-class-meta">Loading timing and venue...</div>
+        </div>
+
+        <!-- Notification Setting Rows -->
+        <div class="notif-settings-group">
+          <!-- Toggle 1: Master Notification Switch -->
+          <div class="notif-setting-row">
+            <div class="notif-setting-info">
+              <div class="notif-setting-name">Enable Pre-Class Notifications</div>
+              <div class="notif-setting-desc">Sends automatic alert popup to your device before each class starts.</div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="notif-master-toggle">
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+
+          <!-- Toggle 2: Reminder Lead Time Dropdown -->
+          <div class="notif-setting-row">
+            <div class="notif-setting-info">
+              <div class="notif-setting-name">Reminder Timing</div>
+              <div class="notif-setting-desc">How early before class should the alert sound and pop up?</div>
+            </div>
+            <select id="notif-lead-time" class="clean-select mini">
+              <option value="5">5 minutes before</option>
+              <option value="10" selected>10 minutes before (Recommended)</option>
+              <option value="15">15 minutes before</option>
+              <option value="30">30 minutes before</option>
+            </select>
+          </div>
+
+          <!-- Toggle 3: Sound Alert -->
+          <div class="notif-setting-row">
+            <div class="notif-setting-info">
+              <div class="notif-setting-name">Play Medical Chime Sound</div>
+              <div class="notif-setting-desc">Play a gentle melodic chime when notification fires.</div>
+            </div>
+            <label class="toggle-switch">
+              <input type="checkbox" id="notif-sound-toggle" checked>
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Immediate Test Action Section -->
+        <div class="notif-test-section">
+          <button type="button" class="btn-test-notif" id="test-notif-btn">
+            <span>🔔 Send Test Notification Now</span>
+          </button>
+          <p class="notif-note-text">
+            💡 <strong>Pro Tip:</strong> For reliable alarms even when your browser is closed or your phone is locked, use the <strong>Sync Phone (.ICS)</strong> button. It installs automatic 15-minute alarms directly into Google Calendar or Apple Calendar!
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-today secondary" id="reminder-modal-dismiss">Done</button>
+        <button type="button" class="btn-today" style="background:#1E3A8A; color:#FFF;" id="reminder-modal-sync-btn">📱 Sync Phone Calendar (.ICS)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL 4: GITHUB DEPLOYMENT GUIDE MODAL ==================== -->
   <div class="modal-backdrop hidden" id="github-modal">
     <div class="modal-card github-modal-card" role="dialog" aria-modal="true" aria-labelledby="github-modal-title">
       <div class="modal-header">
