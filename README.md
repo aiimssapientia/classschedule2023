@@ -12,13 +12,13 @@ Built with pure **HTML5, Modern CSS3, and Vanilla JavaScript (ES6+)** with zero 
   - **📱 Agenda View**: Touch-optimized vertical card stream with sticky day headers, colored subject badges, faculty info, and timing pills.
   - **🗓️ 7-Day Timetable Grid**: Full 8:00 AM to 6:00 PM timetable matrix with sticky time/day headers, touch-friendly day jump strip (Mon–Sun), and horizontal swipe.
   - **⚡ Both View (Split/Combined)**: View both the 7-day grid and daily agenda stream simultaneously on mobile or desktop.
-- **99 Verified Classes & Clinical Postings**:
+- **105 Verified Classes, Clinical Postings & Skill Lab Sessions**:
   - 👁️ **Ophthalmology** (21 Classes: 20 in LT-4/LT-3 + 1 Nov session)
   - 🩺 **Community Medicine & Family Medicine** (38 Sessions: 29 Theory + 9 Practicals for Groups A & B)
-  - 🔬 **General Surgery** (9 Theory Classes in LT-4/LT-3)
+  - 🔬 **General Surgery** (12 Sessions: 9 Theory + 3 Skill Lab Sessions)
   - 🤰 **Obstetrics & Gynaecology** (9 Theory Classes in LT-4/LT-3)
   - 👂 **ENT (Otorhinolaryngology)** (9 Theory Classes in LT-4/LT-3)
-  - 💊 **General Medicine** (7 Theory Classes in LT-4/LT-3)
+  - 💊 **General Medicine** (10 Sessions: 7 Theory + 3 Skill Lab Sessions)
   - 👶 **Paediatrics** (6 Theory Classes in LT-4/LT-3)
 - **📅 Interactive Multi-Month Calendar Modal**:
   - Visual dot indicators on every date showing the exact departments conducting sessions.
@@ -32,7 +32,7 @@ Built with pure **HTML5, Modern CSS3, and Vanilla JavaScript (ES6+)** with zero 
   - Filter by **Cohort** (Group A vs. Group B).
 - **📲 1-Click Phone Calendar Sync (`.ics`)**:
   - Export standard RFC 5545 `.ics` file (`batch2023.ics`).
-  - Import all 99 classes with topics, faculty names, and 15-minute reminders into **Google Calendar, Apple Calendar, or Microsoft Outlook**.
+  - Import all 105 classes and skill lab sessions with topics, faculty names, and 15-minute reminders into **Google Calendar, Apple Calendar, or Microsoft Outlook**.
 
 ---
 

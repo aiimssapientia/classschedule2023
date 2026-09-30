@@ -5,7 +5,7 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:AIIMS MBBS Batch 2023 Schedule
 X-WR-TIMEZONE:Asia/Kolkata
-X-WR-CALDESC:AIIMS Bhubaneswar MBBS Batch 2023 (7th Semester) Academic Schedule
+X-WR-CALDESC:AIIMS Bhubaneswar MBBS Batch 2023 (7th Semester) Academic & Skill Lab Schedule
 BEGIN:VEVENT
 UID:aiims-2023-med-01@aiimsbhubaneswar.edu.in
 DTSTAMP:20260930T000000Z
@@ -982,6 +982,21 @@ DESCRIPTION:Class Reminder: Community Psychiatry
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:aiims-2023-skill-med-01@aiimsbhubaneswar.edu.in
+DTSTAMP:20260930T000000Z
+DTSTART;TZID=Asia/Kolkata:20261008T090000
+DTEND;TZID=Asia/Kolkata:20261008T130000
+SUMMARY:[Medicine Skill Lab] Consolidated Skill Lab - Medicine (Roll No. 1-66)
+DESCRIPTION:Department: General Medicine\nFaculty: Dept. of Medicine Faculty / Skill Lab Instructors\nTopic: Consolidated Skill Lab - Medicine (Roll No. 1-66)\nType: Skill Lab\nGroup: Group A (Roll 1-66)\nVenue: Skill Lab
+LOCATION:Skill Lab, AIIMS Bhubaneswar
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: Consolidated Skill Lab - Medicine (Roll No. 1-66)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:aiims-2023-cmfm-t-18@aiimsbhubaneswar.edu.in
 DTSTAMP:20260930T000000Z
 DTSTART;TZID=Asia/Kolkata:20261008T140000
@@ -1024,6 +1039,21 @@ BEGIN:VALARM
 TRIGGER:-PT15M
 ACTION:DISPLAY
 DESCRIPTION:Class Reminder: Mucormycosis / ROP
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-2023-skill-surg-01@aiimsbhubaneswar.edu.in
+DTSTAMP:20260930T000000Z
+DTSTART;TZID=Asia/Kolkata:20261009T090000
+DTEND;TZID=Asia/Kolkata:20261009T130000
+SUMMARY:[Surgery Skill Lab] Consolidated Skill Lab - Surgery (Roll No. 1-66)
+DESCRIPTION:Department: General Surgery\nFaculty: Dept. of Surgery Faculty / Skill Lab Instructors\nTopic: Consolidated Skill Lab - Surgery (Roll No. 1-66)\nType: Skill Lab\nGroup: Group A (Roll 1-66)\nVenue: Skill Lab
+LOCATION:Skill Lab, AIIMS Bhubaneswar
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: Consolidated Skill Lab - Surgery (Roll No. 1-66)
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -1102,6 +1132,21 @@ DESCRIPTION:Class Reminder: Comprehensive Geriatric Assessment & NPHCE
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:aiims-2023-skill-surg-02@aiimsbhubaneswar.edu.in
+DTSTAMP:20260930T000000Z
+DTSTART;TZID=Asia/Kolkata:20261015T090000
+DTEND;TZID=Asia/Kolkata:20261015T130000
+SUMMARY:[Surgery Skill Lab] Consolidated Skill Lab - Surgery (Roll No. 67-125+ referral batches)
+DESCRIPTION:Department: General Surgery\nFaculty: Dept. of Surgery Faculty / Skill Lab Instructors\nTopic: Consolidated Skill Lab - Surgery (Roll No. 67-125+ referral batches)\nType: Skill Lab\nGroup: Group B (Roll 67-125+)\nVenue: Skill Lab
+LOCATION:Skill Lab, AIIMS Bhubaneswar
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: Consolidated Skill Lab - Surgery (Roll No. 67-125+ referral batches)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:aiims-2023-cmfm-t-20@aiimsbhubaneswar.edu.in
 DTSTAMP:20260930T000000Z
 DTSTART;TZID=Asia/Kolkata:20261015T140000
@@ -1144,6 +1189,21 @@ BEGIN:VALARM
 TRIGGER:-PT15M
 ACTION:DISPLAY
 DESCRIPTION:Class Reminder: Laser in Ophthalmology
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-2023-skill-med-02@aiimsbhubaneswar.edu.in
+DTSTAMP:20260930T000000Z
+DTSTART;TZID=Asia/Kolkata:20261016T090000
+DTEND;TZID=Asia/Kolkata:20261016T130000
+SUMMARY:[Medicine Skill Lab] Consolidated Skill Lab - Medicine (Roll No. 67-125+ referral batches)
+DESCRIPTION:Department: General Medicine\nFaculty: Dept. of Medicine Faculty / Skill Lab Instructors\nTopic: Consolidated Skill Lab - Medicine (Roll No. 67-125+ referral batches)\nType: Skill Lab\nGroup: Group B (Roll 67-125+)\nVenue: Skill Lab
+LOCATION:Skill Lab, AIIMS Bhubaneswar
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: Consolidated Skill Lab - Medicine (Roll No. 67-125+ referral batches)
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -1207,6 +1267,21 @@ DESCRIPTION:Class Reminder: International Health
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:aiims-2023-skill-med-03@aiimsbhubaneswar.edu.in
+DTSTAMP:20260930T000000Z
+DTSTART;TZID=Asia/Kolkata:20261022T090000
+DTEND;TZID=Asia/Kolkata:20261022T130000
+SUMMARY:[Medicine Skill Lab] Consolidated Skill Lab - Medicine (Roll No. 1-125 + referral batches)
+DESCRIPTION:Department: General Medicine\nFaculty: Dept. of Medicine Faculty / Skill Lab Instructors\nTopic: Consolidated Skill Lab - Medicine (Roll No. 1-125 + referral batches)\nType: Skill Lab\nGroup: all\nVenue: Skill Lab
+LOCATION:Skill Lab, AIIMS Bhubaneswar
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: Consolidated Skill Lab - Medicine (Roll No. 1-125 + referral batches)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:aiims-2023-cmfm-t-23@aiimsbhubaneswar.edu.in
 DTSTAMP:20260930T000000Z
 DTSTART;TZID=Asia/Kolkata:20261022T140000
@@ -1249,6 +1324,21 @@ BEGIN:VALARM
 TRIGGER:-PT15M
 ACTION:DISPLAY
 DESCRIPTION:Class Reminder: Nystagmus
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:aiims-2023-skill-surg-03@aiimsbhubaneswar.edu.in
+DTSTAMP:20260930T000000Z
+DTSTART;TZID=Asia/Kolkata:20261023T090000
+DTEND;TZID=Asia/Kolkata:20261023T130000
+SUMMARY:[Surgery Skill Lab] Consolidated Skill Lab - Surgery (Roll No. 1-125 + referral batches)
+DESCRIPTION:Department: General Surgery\nFaculty: Dept. of Surgery Faculty / Skill Lab Instructors\nTopic: Consolidated Skill Lab - Surgery (Roll No. 1-125 + referral batches)\nType: Skill Lab\nGroup: all\nVenue: Skill Lab
+LOCATION:Skill Lab, AIIMS Bhubaneswar
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Class Reminder: Consolidated Skill Lab - Surgery (Roll No. 1-125 + referral batches)
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT

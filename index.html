@@ -62,7 +62,7 @@
         </button>
 
         <!-- 1-Click Phone Calendar Sync (.ICS) -->
-        <button class="header-btn primary-action" id="sync-phone-btn" title="Sync all 99 classes to Google Calendar / Apple Calendar">
+        <button class="header-btn primary-action" id="sync-phone-btn" title="Sync all 105 classes & skill lab sessions to Google Calendar / Apple Calendar">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -161,13 +161,13 @@
           <!-- Clean Department Dropdown -->
           <div class="filter-dropdown-wrap">
             <select id="dept-filter-select" class="clean-select" aria-label="Filter by department">
-              <option value="all">All Departments (99)</option>
-              <option value="Ophthalmology">Ophthalmology (21)</option>
+              <option value="all">All Departments (105)</option>
               <option value="Community Medicine & Family Medicine">CMFM (38)</option>
-              <option value="General Surgery">Surgery (9)</option>
+              <option value="Ophthalmology">Ophthalmology (21)</option>
+              <option value="General Surgery">Surgery & Skill Lab (12)</option>
+              <option value="General Medicine">Medicine & Skill Lab (10)</option>
               <option value="Obstetrics & Gynaecology">OBG (9)</option>
               <option value="ENT">ENT (9)</option>
-              <option value="General Medicine">Medicine (7)</option>
               <option value="Paediatrics">Paediatrics (6)</option>
             </select>
           </div>
@@ -184,9 +184,9 @@
           <div class="sec-filter-group">
             <span class="sec-filter-label">Session Type:</span>
             <select id="type-filter-select" class="clean-select mini">
-              <option value="all">All Types (Theory & Practical)</option>
+              <option value="all">All Types (Theory, Practicals & Skill Lab)</option>
               <option value="Theory">Theory Only (90)</option>
-              <option value="Practical">Practicals Only (9)</option>
+              <option value="Practical">Practicals & Skill Lab (15)</option>
             </select>
           </div>
 
@@ -194,13 +194,13 @@
             <span class="sec-filter-label">Cohort:</span>
             <select id="cohort-filter-select" class="clean-select mini">
               <option value="all">All Groups</option>
-              <option value="Group A">Group A (Mon)</option>
-              <option value="Group B">Group B (Tue)</option>
+              <option value="Group A">Group A (Roll 1-66 / Mon)</option>
+              <option value="Group B">Group B (Roll 67-125+ / Tue)</option>
             </select>
           </div>
 
           <button type="button" class="btn-reset-clean" id="reset-filters-btn">Reset</button>
-          <div class="active-count-badge" id="session-count-pill">Showing 99 sessions</div>
+          <div class="active-count-badge" id="session-count-pill">Showing 105 sessions</div>
         </div>
 
       </div>

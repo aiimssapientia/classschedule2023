@@ -1034,6 +1034,21 @@
       "notes": "Dept. of Community Medicine & Family Medicine • 7th Sem MBBS 2023"
     },
     {
+      "id": "skill-med-01",
+      "department": "General Medicine",
+      "subject": "Medicine Skill Lab",
+      "class_type": "Skill Lab",
+      "topic": "Consolidated Skill Lab - Medicine (Roll No. 1-66)",
+      "faculty": "Dept. of Medicine Faculty / Skill Lab Instructors",
+      "room": "Skill Lab",
+      "date": "2026-10-08",
+      "day": "Thursday",
+      "start_time": "09:00",
+      "end_time": "13:00",
+      "group": "Group A (Roll 1-66)",
+      "notes": "Consolidated Skill Lab schedule for 7th semester MBBS 2023 • Roll No: 1–66 • Venue: Skill Lab"
+    },
+    {
       "id": "cmfm-t-18",
       "department": "Community Medicine & Family Medicine",
       "subject": "CMFM",
@@ -1077,6 +1092,21 @@
       "end_time": "09:00",
       "group": "all",
       "notes": "Dept. of Ophthalmology • 7th Semester MBBS 2023 (Allotted LT-4)"
+    },
+    {
+      "id": "skill-surg-01",
+      "department": "General Surgery",
+      "subject": "Surgery Skill Lab",
+      "class_type": "Skill Lab",
+      "topic": "Consolidated Skill Lab - Surgery (Roll No. 1-66)",
+      "faculty": "Dept. of Surgery Faculty / Skill Lab Instructors",
+      "room": "Skill Lab",
+      "date": "2026-10-09",
+      "day": "Friday",
+      "start_time": "09:00",
+      "end_time": "13:00",
+      "group": "Group A (Roll 1-66)",
+      "notes": "Consolidated Skill Lab schedule for 7th semester MBBS 2023 • Roll No: 1–66 • Venue: Skill Lab"
     },
     {
       "id": "opht-16",
@@ -1154,6 +1184,21 @@
       "notes": "Dept. of Community Medicine & Family Medicine • 7th Sem MBBS 2023"
     },
     {
+      "id": "skill-surg-02",
+      "department": "General Surgery",
+      "subject": "Surgery Skill Lab",
+      "class_type": "Skill Lab",
+      "topic": "Consolidated Skill Lab - Surgery (Roll No. 67-125+ referral batches)",
+      "faculty": "Dept. of Surgery Faculty / Skill Lab Instructors",
+      "room": "Skill Lab",
+      "date": "2026-10-15",
+      "day": "Thursday",
+      "start_time": "09:00",
+      "end_time": "13:00",
+      "group": "Group B (Roll 67-125+)",
+      "notes": "Consolidated Skill Lab schedule for 7th semester MBBS 2023 • Roll No: 67–125+ referral batches • Venue: Skill Lab"
+    },
+    {
       "id": "cmfm-t-20",
       "department": "Community Medicine & Family Medicine",
       "subject": "CMFM",
@@ -1197,6 +1242,21 @@
       "end_time": "09:00",
       "group": "all",
       "notes": "Dept. of Ophthalmology • 7th Semester MBBS 2023 (Allotted LT-4)"
+    },
+    {
+      "id": "skill-med-02",
+      "department": "General Medicine",
+      "subject": "Medicine Skill Lab",
+      "class_type": "Skill Lab",
+      "topic": "Consolidated Skill Lab - Medicine (Roll No. 67-125+ referral batches)",
+      "faculty": "Dept. of Medicine Faculty / Skill Lab Instructors",
+      "room": "Skill Lab",
+      "date": "2026-10-16",
+      "day": "Friday",
+      "start_time": "09:00",
+      "end_time": "13:00",
+      "group": "Group B (Roll 67-125+)",
+      "notes": "Consolidated Skill Lab schedule for 7th semester MBBS 2023 • Roll No: 67–125+ referral batches • Venue: Skill Lab"
     },
     {
       "id": "cmfm-t-21",
@@ -1259,6 +1319,21 @@
       "notes": "Dept. of Community Medicine & Family Medicine • 7th Sem MBBS 2023"
     },
     {
+      "id": "skill-med-03",
+      "department": "General Medicine",
+      "subject": "Medicine Skill Lab",
+      "class_type": "Skill Lab",
+      "topic": "Consolidated Skill Lab - Medicine (Roll No. 1-125 + referral batches)",
+      "faculty": "Dept. of Medicine Faculty / Skill Lab Instructors",
+      "room": "Skill Lab",
+      "date": "2026-10-22",
+      "day": "Thursday",
+      "start_time": "09:00",
+      "end_time": "13:00",
+      "group": "all",
+      "notes": "Consolidated Skill Lab schedule for 7th semester MBBS 2023 • Entire Batch (Roll 1–125 + referral batches) • Venue: Skill Lab"
+    },
+    {
       "id": "cmfm-t-23",
       "department": "Community Medicine & Family Medicine",
       "subject": "CMFM",
@@ -1302,6 +1377,21 @@
       "end_time": "09:00",
       "group": "all",
       "notes": "Dept. of Ophthalmology • 7th Semester MBBS 2023 (Allotted LT-4)"
+    },
+    {
+      "id": "skill-surg-03",
+      "department": "General Surgery",
+      "subject": "Surgery Skill Lab",
+      "class_type": "Skill Lab",
+      "topic": "Consolidated Skill Lab - Surgery (Roll No. 1-125 + referral batches)",
+      "faculty": "Dept. of Surgery Faculty / Skill Lab Instructors",
+      "room": "Skill Lab",
+      "date": "2026-10-23",
+      "day": "Friday",
+      "start_time": "09:00",
+      "end_time": "13:00",
+      "group": "all",
+      "notes": "Consolidated Skill Lab schedule for 7th semester MBBS 2023 • Entire Batch (Roll 1–125 + referral batches) • Venue: Skill Lab"
     },
     {
       "id": "opht-19",
