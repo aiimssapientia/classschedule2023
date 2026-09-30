@@ -1389,6 +1389,29 @@ body {
   max-width: 580px;
 }
 
+#cal-prev-month,
+#cal-next-month {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  color: var(--ink);
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+#cal-prev-month:hover,
+#cal-next-month:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
 .cal-modal-body {
   padding: 0.5rem 1.25rem 1.25rem;
 }

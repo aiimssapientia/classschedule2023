@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="description" content="AIIMS Bhubaneswar MBBS Batch 2023 (7th Semester) Academic & Clinical Teaching Schedule - September 2026">
+  <meta name="description" content="AIIMS Bhubaneswar MBBS Batch 2023 (7th Semester) Academic & Clinical Teaching Schedule - September – November 2026">
   <meta name="theme-color" content="#1E3A8A">
   <title>MBBS Batch 2023 Class Calendar | AIIMS Bhubaneswar</title>
 
@@ -32,7 +32,7 @@
         <div class="brand-copy">
           <div class="brand-kicker">AIIMS BHUBANESWAR • ACADEMIC SECTION</div>
           <h1 class="brand-title">MBBS Batch 2023 Class Calendar</h1>
-          <p class="brand-subtitle">7th Semester Teaching Schedule • September 2026 (LT-3 & Clinical Depts)</p>
+          <p class="brand-subtitle">7th Semester Teaching Schedule • September – November 2026 (LT-4 & Clinical Depts)</p>
         </div>
       </div>
 
@@ -62,7 +62,7 @@
         </button>
 
         <!-- 1-Click Phone Calendar Sync (.ICS) -->
-        <button class="header-btn primary-action" id="sync-phone-btn" title="Sync all 59 classes to Google Calendar / Apple Calendar">
+        <button class="header-btn primary-action" id="sync-phone-btn" title="Sync all 99 classes to Google Calendar / Apple Calendar">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -161,14 +161,14 @@
           <!-- Clean Department Dropdown -->
           <div class="filter-dropdown-wrap">
             <select id="dept-filter-select" class="clean-select" aria-label="Filter by department">
-              <option value="all">All Departments (59)</option>
-              <option value="Ophthalmology">Ophthalmology (14)</option>
-              <option value="Community Medicine & Family Medicine">CMFM (23)</option>
-              <option value="General Medicine">Medicine (6)</option>
-              <option value="General Surgery">Surgery (5)</option>
-              <option value="Obstetrics & Gynaecology">OBG (4)</option>
-              <option value="ENT">ENT (4)</option>
-              <option value="Paediatrics">Paediatrics (3)</option>
+              <option value="all">All Departments (99)</option>
+              <option value="Ophthalmology">Ophthalmology (21)</option>
+              <option value="Community Medicine & Family Medicine">CMFM (38)</option>
+              <option value="General Surgery">Surgery (9)</option>
+              <option value="Obstetrics & Gynaecology">OBG (9)</option>
+              <option value="ENT">ENT (9)</option>
+              <option value="General Medicine">Medicine (7)</option>
+              <option value="Paediatrics">Paediatrics (6)</option>
             </select>
           </div>
 
@@ -185,7 +185,7 @@
             <span class="sec-filter-label">Session Type:</span>
             <select id="type-filter-select" class="clean-select mini">
               <option value="all">All Types (Theory & Practical)</option>
-              <option value="Theory">Theory Only (50)</option>
+              <option value="Theory">Theory Only (90)</option>
               <option value="Practical">Practicals Only (9)</option>
             </select>
           </div>
@@ -200,7 +200,7 @@
           </div>
 
           <button type="button" class="btn-reset-clean" id="reset-filters-btn">Reset</button>
-          <div class="active-count-badge" id="session-count-pill">Showing 59 sessions</div>
+          <div class="active-count-badge" id="session-count-pill">Showing 99 sessions</div>
         </div>
 
       </div>
@@ -359,9 +359,21 @@
   <div class="modal-backdrop hidden" id="calendar-modal">
     <div class="modal-card cal-modal-card" role="dialog" aria-modal="true" aria-labelledby="cal-modal-heading">
       <div class="modal-header">
-        <div>
-          <h2 class="modal-title" id="cal-modal-heading">September 2026 Academic Calendar</h2>
-          <p class="modal-subtitle">Tap any date to inspect scheduled lectures & clinical practicals</p>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <button type="button" class="nav-arrow-btn" id="cal-prev-month" title="Previous Month" aria-label="Previous Month">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <div>
+            <h2 class="modal-title" id="cal-modal-heading">October 2026 Academic Calendar</h2>
+            <p class="modal-subtitle">Tap any date to inspect scheduled lectures & clinical practicals</p>
+          </div>
+          <button type="button" class="nav-arrow-btn" id="cal-next-month" title="Next Month" aria-label="Next Month">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
         <button class="modal-close-icon" id="cal-modal-close" aria-label="Close Calendar">&times;</button>
       </div>
