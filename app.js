@@ -217,17 +217,14 @@ function calculateCurrentWeekOffset() {
  * On desktop devices, defaults to 'agenda' view.
  */
 function getDefaultViewMode() {
-  if (typeof window !== 'undefined' && window.innerWidth <= 768) {
-    return 'grid';
-  }
-  return 'agenda';
+  return 'grid'; // Grid view is always the default view as requested
 }
 
 let weekOffset      = calculateCurrentWeekOffset(); // Automatically defaults to today!
 let activeDept      = 'all';
 let activeType      = 'all';
 let activeCohort    = 'all';
-let activeView      = getDefaultViewMode(); // Defaults to grid on mobile!
+let activeView      = 'grid'; // Grid View is the default view // Defaults to grid on mobile!
 let searchQuery     = '';
 let activeEvent     = null;
 let calViewDate     = new Date(2026, 9, 1);  // October 2026 (9 = Oct)
@@ -495,12 +492,48 @@ function renderGridView(visibleEvents, weekStart, today) {
     grid.appendChild(header);
   });
 
-  // Sync mobile day jump strip active indicator
-  const todayIdx = weekDayDates.findIndex(d => d.toDateString() === today.toDateString());
-  const initialActiveIdx = (todayIdx !== -1) ? todayIdx : 0;
-  document.querySelectorAll('#grid-day-jump-strip .day-jump-chip').forEach(b => {
-    b.classList.toggle('active', parseInt(b.dataset.dayIdx, 10) === initialActiveIdx);
-  });
+  // Dynamically populate mobile day jump strip with exact dates, active state, and class dots
+  const jumpStrip = document.getElementById('grid-day-jump-strip');
+  if (jumpStrip) {
+    jumpStrip.innerHTML = '';
+    const todayIdx = weekDayDates.findIndex(d => d.toDateString() === today.toDateString());
+    const initialActiveIdx = (todayIdx !== -1) ? todayIdx : 0;
+
+    DAYS.forEach((day, i) => {
+      const dayDate = weekDayDates[i];
+      const dateKey = toDateKey(dayDate);
+      const isToday = (dayDate.toDateString() === today.toDateString());
+      const dayClasses = visibleEvents.filter(e => e.date === dateKey);
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = `day-jump-chip${isToday ? ' is-today' : ''}${i === initialActiveIdx ? ' active' : ''}`;
+      btn.dataset.dayIdx = i;
+      btn.setAttribute('aria-label', `${day}, ${formatShortDate(dayDate)} (${dayClasses.length} classes)`);
+
+      btn.innerHTML = `
+        <span class="chip-day-name">${DAY_SHORT[i]}</span>
+        <span class="chip-day-num">${dayDate.getDate()}</span>
+        ${dayClasses.length > 0 ? `<span class="chip-dot-indicator" title="${dayClasses.length} class(es)"></span>` : '<span class="chip-dot-placeholder"></span>'}
+      `;
+
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#grid-day-jump-strip .day-jump-chip').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const gridContainer = document.getElementById('grid-view-container');
+        if (gridContainer) {
+          const header = gridContainer.querySelector(`.grid-day-header[data-day-index="${i}"]`);
+          if (header) {
+            const timeColWidth = window.innerWidth <= 768 ? 46 : 60;
+            const scrollTarget = header.offsetLeft - timeColWidth;
+            gridContainer.scrollTo({ left: Math.max(0, scrollTarget), behavior: 'smooth' });
+          }
+        }
+      });
+
+      jumpStrip.appendChild(btn);
+    });
+  }
 
   // Hour Rows (8 to 17)
   for (let h = GRID_START; h < GRID_END; h++) {
@@ -553,9 +586,12 @@ function renderGridView(visibleEvents, weekStart, today) {
     card.style.height = `${heightPx}px`;
 
     card.innerHTML = `
-      <div class="card-top-tag">${escapeHtml(theme.short)} • ${escapeHtml(evt.class_type)}</div>
+      <div class="card-top-tag">
+        <span class="card-tag-sub">${escapeHtml(theme.short)} • ${escapeHtml(evt.class_type)}</span>
+        <span class="card-tag-room">${escapeHtml(evt.room || 'LT-4')}</span>
+      </div>
       <div class="card-topic-line">${escapeHtml(evt.topic)}</div>
-      ${heightPx >= 52 ? `<div class="card-faculty-line">👨‍⚕️ ${escapeHtml(evt.faculty)}</div>` : ''}
+      ${heightPx >= 50 ? `<div class="card-faculty-line">👨‍⚕️ ${escapeHtml(evt.faculty)}</div>` : ''}
     `;
 
     card.addEventListener('click', (e) => {
@@ -683,7 +719,7 @@ function openDetailModal(evt, theme, dayName) {
   
   const niceDate = evt.date ? formatNiceDate(evt.date) : (dayName || '');
   document.getElementById('modal-time-val').textContent = `${niceDate} • ${formatTime(evt.start_time)} – ${formatTime(evt.end_time)}`;
-  document.getElementById('modal-venue-val').textContent = evt.room || 'Lecture Theatre 3 (LT-3)';
+  document.getElementById('modal-venue-val').textContent = evt.room || 'Lecture Theatre 4 (LT-4)';
   document.getElementById('modal-notes-val').textContent = evt.notes || 'AIIMS Bhubaneswar MBBS Batch 2023 (7th Semester)';
 
   // Build Google Calendar Web Link
@@ -693,7 +729,7 @@ function openDetailModal(evt, theme, dayName) {
     const endIso   = evt.date.replace(/-/g, '') + 'T' + evt.end_time.replace(/:/g, '') + '00';
     const text     = encodeURIComponent(`[${evt.department}] ${evt.topic}`);
     const details  = encodeURIComponent(`Faculty: ${evt.faculty}\nRoom: ${evt.room}\nDetails: ${evt.notes}`);
-    const location = encodeURIComponent(`${evt.room || 'LT-3'}, AIIMS Bhubaneswar`);
+    const location = encodeURIComponent(`${evt.room || 'LT-4'}, AIIMS Bhubaneswar`);
     gcalBtn.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${startIso}/${endIso}&details=${details}&location=${location}`;
   }
 

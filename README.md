@@ -36,42 +36,25 @@ Built with pure **HTML5, Modern CSS3, and Vanilla JavaScript (ES6+)** with zero 
 
 ---
 
-## 🚀 How to Host on GitHub Pages (Free)
+## 🌐 Live Website
 
-Follow these 3 simple steps to host this calendar on GitHub at `https://<your-username>.github.io/batch2023-calendar/`:
+The schedule is hosted live on GitHub Pages:  
+👉 **[https://aiimssapientia.github.io/classschedule2023/](https://aiimssapientia.github.io/classschedule2023/)**
 
-### Step 1: Create a GitHub Repository
-1. Log into your GitHub account at [github.com](https://github.com).
-2. Click the **`+`** icon in the top right corner and choose **"New repository"**.
-3. Repository name: `batch2023-calendar` (or any name you choose).
-4. Set it to **Public**.
-5. Leave "Add a README file" **unchecked** (we already have one).
-6. Click **"Create repository"**.
+---
 
-### Step 2: Push your code from your computer
+## 🚀 How to Push Updates to GitHub Pages
+
 Open **PowerShell** or **Command Prompt** on your computer and run these commands:
 
 ```bash
 cd "c:\Users\MOULIK GORAI\Desktop\website\batch2023-calendar"
-git init
 git add .
-git commit -m "AIIMS Bhubaneswar MBBS Batch 2023 Class Calendar"
-git branch -M main
-git remote add origin https://github.com/<YOUR-USERNAME>/batch2023-calendar.git
-git push -u origin main
+git commit -m "Update October & November 2026 schedule with mobile grid optimizations"
+git push origin main
 ```
-*(Replace `<YOUR-USERNAME>` with your actual GitHub username).*
 
-### Step 3: Enable GitHub Pages
-1. Go to your repository on GitHub (`https://github.com/<YOUR-USERNAME>/batch2023-calendar`).
-2. Click **Settings** (tab at the top).
-3. In the left sidebar, click **Pages**.
-4. Under **Build and deployment > Branch**:
-   - Select branch: `main`
-   - Select folder: `/(root)`
-   - Click **Save**.
-5. Within 1 minute, your website will be live at:  
-   👉 **`https://<YOUR-USERNAME>.github.io/batch2023-calendar/`**
+Your live site at **`https://aiimssapientia.github.io/classschedule2023/`** will update automatically within 1–2 minutes!
 
 ---
 
